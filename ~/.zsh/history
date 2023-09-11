@@ -340,3 +340,16 @@ exit
 : 1694426373:0;git init
 : 1694426377:0;git branch -m main
 : 1694426381:0;git add .
+: 1694426387:0;git commit -m "test"
+: 1694426390:0;git remote add gitlab git@gitlab.com:bulkiestpizza/nixsync
+: 1694426392:0;git push
+: 1694426397:0;git push --set-upstream gitlab main
+: 1694426405:0;git fetch
+: 1694426412:0;git push --set-upstream gitlab main
+: 1694426418:0;git pull
+: 1694426426:0;git pull gitlab
+: 1694426433:0;git pull gitlab main
+: 1694426446:0;git config pull.rebase true
+: 1694426448:0;git pull gitlab main
+: 1694426450:0;git stage
+: 1694426453:0;git add .
