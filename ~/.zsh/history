@@ -353,3 +353,8 @@ exit
 : 1694426448:0;git pull gitlab main
 : 1694426450:0;git stage
 : 1694426453:0;git add .
+: 1694426455:0;git commit -m "test"
+: 1694426457:0;git push --set-upstream gitlab main
+: 1694426462:0;git pull
+: 1694426464:0;git pull gitlab main
+: 1694426469:0;gitk
