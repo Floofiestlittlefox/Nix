@@ -358,3 +358,21 @@ exit
 : 1694426462:0;git pull
 : 1694426464:0;git pull gitlab main
 : 1694426469:0;gitk
+: 1694517693:0;ls
+: 1694517700:0;mkdir home-manager
+: 1694517700:0;ls
+: 1694517703:0;cd home-manager
+: 1694517711:0;ls
+: 1694517712:0;cd ..
+: 1694517712:0;ls
+: 1694517719:0;rm ./home.nix
+: 1694517720:0;ls
+: 1694517726:0;rm -rf ./home-manager
+: 1694517729:0;ls
+: 1694517730:0;cd
+: 1694517814:0;ls
+: 1694517819:0;cp -rf ~/.config/home-manager ./
+: 1694517820:0;ls
+: 1694517822:0;git add .
+: 1694517826:0;cd home-manager
+: 1694517831:0;git add .
