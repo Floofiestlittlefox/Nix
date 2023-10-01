@@ -1,0 +1,91 @@
+font pango:monospace 8.000000
+floating_modifier Mod1
+default_border normal 2
+default_floating_border normal 2
+hide_edge_borders none
+focus_wrapping yes
+focus_follows_mouse yes
+focus_on_window_activation smart
+mouse_warping output
+workspace_layout default
+workspace_auto_back_and_forth no
+client.focused #4c7899 #285577 #ffffff #2e9ef4 #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
+client.unfocused #333333 #222222 #888888 #292d2e #222222
+client.urgent #2f343a #900000 #ffffff #900000 #900000
+client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background #ffffff
+
+bindsym mod4+0 exec /home/lachlan/.config/i3/workspace.sh 10
+bindsym mod4+1 exec /home/lachlan/.config/i3/workspace.sh 1
+bindsym mod4+2 exec /home/lachlan/.config/i3/workspace.sh 2
+bindsym mod4+3 exec /home/lachlan/.config/i3/workspace.sh 3
+bindsym mod4+4 exec /home/lachlan/.config/i3/workspace.sh 4
+bindsym mod4+5 exec /home/lachlan/.config/i3/workspace.sh 5
+bindsym mod4+6 exec /home/lachlan/.config/i3/workspace.sh 6
+bindsym mod4+7 exec /home/lachlan/.config/i3/workspace.sh 7
+bindsym mod4+8 exec /home/lachlan/.config/i3/workspace.sh 8
+bindsym mod4+9 exec /home/lachlan/.config/i3/workspace.sh 9
+bindsym mod4+Return exec kitty
+bindsym mod4+Shift+Return exec firefox
+bindsym mod4+d exec /nix/store/ckfxpr5ah1v0jnacd6gkb6v7g4j6pnq1-dmenu-5.2/bin/dmenu_run
+bindsym mod4+f fullscreen toggle
+bindsym mod4+h focus left
+bindsym mod4+j focus down
+bindsym mod4+k focus up
+bindsym mod4+l focus right
+bindsym mod4+q kill
+bindsym mod4+shift+0 exec /home/lachlan/.config/i3/workspaceshift.sh 10
+bindsym mod4+shift+1 exec /home/lachlan/.config/i3/workspaceshift.sh 1
+bindsym mod4+shift+2 exec /home/lachlan/.config/i3/workspaceshift.sh 2
+bindsym mod4+shift+3 exec /home/lachlan/.config/i3/workspaceshift.sh 3
+bindsym mod4+shift+4 exec /home/lachlan/.config/i3/workspaceshift.sh 4
+bindsym mod4+shift+5 exec /home/lachlan/.config/i3/workspaceshift.sh 5
+bindsym mod4+shift+6 exec /home/lachlan/.config/i3/workspaceshift.sh 6
+bindsym mod4+shift+7 exec /home/lachlan/.config/i3/workspaceshift.sh 7
+bindsym mod4+shift+8 exec /home/lachlan/.config/i3/workspaceshift.sh 8
+bindsym mod4+shift+9 exec /home/lachlan/.config/i3/workspaceshift.sh 9
+bindsym mod4+shift+e exit
+bindsym mod4+shift+h move left
+bindsym mod4+shift+j move down
+bindsym mod4+shift+k move up
+bindsym mod4+shift+l move right
+bindsym mod4+shift+r restart
+bindsym mod4+space floating toggle
+
+mode "resize" {
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Escape mode default
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Return mode default
+  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+}
+
+bar {
+  font pango:monospace 8.000000
+  mode dock
+  hidden_state hide
+  position bottom
+  status_command /nix/store/fijjmaw6p30g40x9ky5225ycckmrw0jf-i3status-2.14/bin/i3status
+  i3bar_command /nix/store/8q87hyjfvkrvir176q2c54qcnvlz47m9-i3-4.22/bin/i3bar
+  workspace_buttons yes
+  strip_workspace_numbers no
+  tray_output primary
+  colors {
+    background #000000
+    statusline #ffffff
+    separator #666666
+    focused_workspace #4c7899 #285577 #ffffff
+    active_workspace #333333 #5f676a #ffffff
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+    binding_mode #2f343a #900000 #ffffff
+  }
+}
+
+gaps inner 3
+gaps outer 5
+exec  exec ~/.screenlayout/def.sh &
+exec  exec ~/.fehbg &
+exec  exec dunst &
