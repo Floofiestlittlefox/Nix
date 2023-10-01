@@ -381,3 +381,10 @@ exit
 : 1694517837:0;git push
 : 1694517976:0;cp -rf ~/.config/hypr ./
 : 1694517977:0;git add .
+: 1696118700:5;git clone git@gitlab.com:/bulkiestpizza/nixsync
+: 1696118707:0;cd ni
+: 1696118709:0;cd nixsync
+: 1696118709:0;ls
+: 1696118712:0;cd home-manager
+: 1696118738:0;ls
+: 1696118740:0;git add .
