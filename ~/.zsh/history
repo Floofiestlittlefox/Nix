@@ -400,3 +400,15 @@ exit
 : 1696118840:0;mkdir i3
 : 1696118848:0;sudo cp ~/.config/i3/* ./i3
 : 1696118851:0;git add .
+: 1696118852:0;git commit -m "test"
+: 1696118853:0;git pus
+: 1696118854:0;git push
+: 1696118870:0;ls
+: 1696118877:0;cat flake.nix
+: 1696118893:0;mkdir nix
+: 1696118903:0;sudo cp /etc/nixos/configuration.nix ./nix
+: 1696118904:0;ls
+: 1696118904:0;cd nix
+: 1696118905:0;ls
+: 1696118907:0;cd ..
+: 1696118909:0;git add .
