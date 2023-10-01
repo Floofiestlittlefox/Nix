@@ -412,3 +412,26 @@ exit
 : 1696118905:0;ls
 : 1696118907:0;cd ..
 : 1696118909:0;git add .
+: 1696118910:0;git commit -m "test"
+: 1696118912:0;git push
+: 1696118920:0;mkdir ssh
+: 1696118927:0;sudo cp /home/lachlan/.ssh/id_rsa /home/lachlan/.ssh/id_rsa.pub /home/lachlan/.ssh/known_hosts /home/lachlan/.ssh/known_hosts.old ./ssh
+: 1696118929:0;git add .
+: 1696118934:0;cd ssh
+: 1696118934:0;ls
+: 1696118939:0;ls -all
+: 1696118949:0;sudo chown -R lachlan:lachlan ./*
+: 1696118954:0;sudo chown -R lachlan:users ./*
+: 1696118954:0;ls
+: 1696118955:0;ls -all
+: 1696118956:0;cd ..
+: 1696118957:0;ls
+: 1696118959:0;cd nix
+: 1696118960:0;ls
+: 1696118961:0;ls -all
+: 1696118964:0;sudo chown -R lachlan:users ./*
+: 1696118965:0;ls
+: 1696118965:0;cd ..
+: 1696118967:0;sudo chown -R lachlan:users ./*
+: 1696118967:0;ls
+: 1696118969:0;git add .
