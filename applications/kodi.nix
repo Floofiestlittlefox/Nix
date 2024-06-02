@@ -10,6 +10,7 @@
 		[
 			jellyfin
 			osmc-skin
-		];
+		]);
+		
 	};
 }
