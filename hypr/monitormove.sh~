@@ -1,1 +1,0 @@
-exec hyprctl dispatch movetoworkspace $1
