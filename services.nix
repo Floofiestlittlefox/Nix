@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let 
-   appimage-menu-updater = (pkgs.callPackage ./customApps/appimage-menu-updater.nix {});
+   appimage-menu-updater = (pkgs.callPackage ./customPackages/appimage-menu-updater.nix {});
 in
 {
     services = {

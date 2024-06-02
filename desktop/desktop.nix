@@ -20,7 +20,6 @@
     virtualisation.waydroid.enable = false;
     imports = [
     	./desktop-hardware-configuration.nix
-	./configuration.nix
 ];
 	networking.hostName = "lachlanDesktop";
 	hardware.bluetooth = {
