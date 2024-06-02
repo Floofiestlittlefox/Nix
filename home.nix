@@ -19,7 +19,7 @@
 	    pointerCursor = {
 		gtk.enable = true;
 		name = "Vulpix";
-		package = (pkgs.callPackage ./Vulpix {});
+		package = inputs.vulpix.packages.${pkgs.system}.default
 		size = 24;
 		};
 	};

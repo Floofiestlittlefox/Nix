@@ -16,14 +16,17 @@
          inputs.hyprland.follows = "hyprland"; # IMPORTANT
       };
 	hyprspace = {
-		url = "git+file:///home/lachlan/.config/nix/Hyprspace/";
+		url = "git+https://github.com/KZDKM/Hyprspace";
 		inputs.hyprland.follows = "hyprland";
 	};
 	hyprscroller = {
-		url = "git+file:///home/lachlan/.config/nix/hyprscroller/";
+		url = "git+https://github.com/dawsers/hyprscroller";
 		inputs.hyprland.follows = "hyprland";
 		};
-      };
+	vulpix = {
+		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
+	};
+};
 
   outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {
 

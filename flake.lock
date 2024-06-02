@@ -153,16 +153,17 @@
         ]
       },
       "locked": {
-        "dirtyRev": "602dea8c7237ec5c641317b9f4091734d6ac1f84-dirty",
-        "dirtyShortRev": "602dea8-dirty",
-        "lastModified": 1713389129,
-        "narHash": "sha256-rZvYs11ahkJ3ou7sZlZDoqFKbQaS/eoj0nRaQ9pfbBU=",
+        "lastModified": 1715438148,
+        "narHash": "sha256-gd0LyHbznXzX/Jgq8ra5oux7FuamCRyo8IzckTb70Eg=",
+        "ref": "refs/heads/master",
+        "rev": "5c01aac850c21451a5697a6fd7959424b247fe6a",
+        "revCount": 52,
         "type": "git",
-        "url": "file:///home/lachlan/.config/nix/hyprscroller/"
+        "url": "https://github.com/dawsers/hyprscroller"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/lachlan/.config/nix/hyprscroller/"
+        "url": "https://github.com/dawsers/hyprscroller"
       }
     },
     "hyprspace": {
@@ -172,16 +173,17 @@
         ]
       },
       "locked": {
-        "dirtyRev": "a44d834af279f233a269d065d2e14fe4101d6f41-dirty",
-        "dirtyShortRev": "a44d834-dirty",
-        "lastModified": 1713989021,
-        "narHash": "sha256-+YOiQXQzLhXVoIdym5KS63TghBuD/qo/nU4CjdpsfUo=",
+        "lastModified": 1715376791,
+        "narHash": "sha256-QKecFhWAB7sagSE+FXztINDqYqLro2nYp94f+ZtE/f4=",
+        "ref": "refs/heads/main",
+        "rev": "8049b2794ca19d49320093426677d8c2911e7327",
+        "revCount": 132,
         "type": "git",
-        "url": "file:///home/lachlan/.config/nix/Hyprspace/"
+        "url": "https://github.com/KZDKM/Hyprspace"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/lachlan/.config/nix/Hyprspace/"
+        "url": "https://github.com/KZDKM/Hyprspace"
       }
     },
     "nixpkgs": {
