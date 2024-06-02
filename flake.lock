@@ -103,27 +103,6 @@
         "type": "github"
       }
     },
-    "hyprgrass": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715521117,
-        "narHash": "sha256-WbPHz7ENgnRvqQvmOe3EdU6i9FT6xMQHIdYdJYPCbfY=",
-        "ref": "refs/heads/main",
-        "rev": "f888dab948219197e2870cfd261b6f87690484a7",
-        "revCount": 267,
-        "type": "git",
-        "url": "https://github.com/horriblename/hyprgrass"
-      },
-      "original": {
-        "rev": "f888dab948219197e2870cfd261b6f87690484a7",
-        "type": "git",
-        "url": "https://github.com/horriblename/hyprgrass"
-      }
-    },
     "hyprland": {
       "inputs": {
         "hyprcursor": "hyprcursor",
@@ -200,50 +179,6 @@
         "type": "github"
       }
     },
-    "hyprscroller": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715438148,
-        "narHash": "sha256-gd0LyHbznXzX/Jgq8ra5oux7FuamCRyo8IzckTb70Eg=",
-        "ref": "refs/heads/master",
-        "rev": "5c01aac850c21451a5697a6fd7959424b247fe6a",
-        "revCount": 52,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/dawsers/hyprscroller"
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/dawsers/hyprscroller"
-      }
-    },
-    "hyprspace": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715376791,
-        "narHash": "sha256-QKecFhWAB7sagSE+FXztINDqYqLro2nYp94f+ZtE/f4=",
-        "ref": "refs/heads/main",
-        "rev": "8049b2794ca19d49320093426677d8c2911e7327",
-        "revCount": 132,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/KZDKM/Hyprspace"
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/KZDKM/Hyprspace"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1709038661,
@@ -310,10 +245,7 @@
       "inputs": {
         "eww": "eww",
         "home-manager": "home-manager",
-        "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
-        "hyprscroller": "hyprscroller",
-        "hyprspace": "hyprspace",
         "nixpkgs": "nixpkgs_3",
         "vulpix": "vulpix"
       }

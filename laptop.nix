@@ -16,4 +16,12 @@
     };
     hardware.sensor.iio.enable = true;
     virtualisation.docker.enable = false;
+    	imports = [
+    		./laptop-hardware-configuration.nix
+	];
+	networking.hostName = "lachlanLaptop";
+	hardware.bluetooth = {
+		enable = false;
+		powerOnBoot = false;
+	};
 }

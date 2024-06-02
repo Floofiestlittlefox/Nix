@@ -147,9 +147,9 @@ wayland.windowManager.hyprland = {
 			];
 		};
 		plugins = [
-			inputs.hyprgrass.packages.${pkgs.system}.default
-			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-			inputs.hyprscroller.packages.${pkgs.system}.default
+#			inputs.hyprgrass.packages.${pkgs.system}.default
+#			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+			#inputs.hyprscroller.packages.${pkgs.system}.default
 		];
 	};
 }

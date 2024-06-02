@@ -9,8 +9,6 @@
 		./services.nix
 		./packages.nix
 		./environment.nix
-		./hardware-configuration.nix
-		./laptop.nix
 	];
 
 	nix.settings = {
@@ -60,7 +58,9 @@
 		users.lachlan = {
 			isNormalUser = true;
 			extraGroups = [ "wheel" "networkmanager" "lp" "docker" "video" "input" ];
+			openssh.authorizedKeys.keys = [ "ssh-rsa AAAAC3NzaC1lZDI1NTE5AAAAIJRyaHRAU4gZzwPqsNZtfs65FHnHdQTNeRBgKMlDLxZp lachlan@lachlanLaptop" "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxUqOjSxVsegRphQEurJuirn/W8ep1X4ZAE0a/eTOOOKn6Egc50Va2FVv+2bGiR+CoXfX+ALzdA/cSGlITeDNyy7yuzjjq2G6+9jCAq61RvBh1iBtgAn0+Xsrirlv4J7UEEzp5QdbUJ6z4RoN3FRB/nHUX8/7dT63s6P4NqRuSXMsRes2nw+/r7ywIxwptVJ+q8JZgE1DFFzUfKQkjsazHSlkOBbbS6G5oLt1v9HD7TmtBWjwgzi1DNRqRQKdUBePINdCvFCjldDHW3YfezBjPyGYZ7aUKFHSNKqTJocOGwbGzj0VFCFKNjpASi70hYH4KyNvXI+/Ue/DRQD4L6rbIkATncNni0LXNdJW/Ux47DO+4AdjjNJrh3AqHKowaRCbr8K8bmA/bYz3PxiJddqRpbrlLaG7zGh1/SIXuc+xYKHHqps/8vvSUenWWb1YD0tsBq0Yuk5c/RBDQsUn+QLO3fOgSQFp7giwnHuP/mtjywJrfn7VzyaNjm lachlan@lachlanDesktop" ];
 			packages = with pkgs; [];
+
 		};
 	};
 	system.stateVersion = "23.11";

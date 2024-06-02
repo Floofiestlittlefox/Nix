@@ -57,10 +57,6 @@ in
 };
     sound.enable = true;
 	hardware = {
-		bluetooth = {
-			enable = false;
-			powerOnBoot = false;
-		};
 		pulseaudio.enable = false;
 
 	};
@@ -95,7 +91,6 @@ in
 		waydroid.enable = true;
 		};
     networking = {
-    	hostName = "lachlanLaptop";
         networkmanager.enable = true; 
        firewall.enable = false; 
     };

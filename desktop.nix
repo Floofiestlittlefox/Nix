@@ -17,4 +17,13 @@
     };
     virtualisation.docker.enable = true;
     virtualisation.docker.liveRestore = false;
+    imports = [
+    	./desktop-hardware-configuration.nix
+	./configuration.nix
+];
+	networking.hostName = "lachlanDesktop";
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = true;
+	};
 }
