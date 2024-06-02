@@ -11,19 +11,30 @@
 		rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
 		submodules = true;
    	};
-    hyprgrass = {
-         url = "git+https://github.com/horriblename/hyprgrass?rev=f888dab948219197e2870cfd261b6f87690484a7";
-         inputs.hyprland.follows = "hyprland"; # IMPORTANT
-      };
+	hyprgrass = {
+		 url = "git+https://github.com/horriblename/hyprgrass?rev=f888dab948219197e2870cfd261b6f87690484a7";
+		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
+	};
 	hyprspace = {
-		url = "git+file:///home/lachlan/.config/nix/Hyprspace/";
+		type = "git";
+		url = "https://github.com/KZDKM/Hyprspace";
+		submodules = true;
 		inputs.hyprland.follows = "hyprland";
 	};
 	hyprscroller = {
-		url = "git+file:///home/lachlan/.config/nix/hyprscroller/";
+		type = "git";
+		url = "https://github.com/dawsers/hyprscroller";
+		rev = "733cfebfd241ecb98298314986896ad46dad3ccd";
+		submodules = true;
 		inputs.hyprland.follows = "hyprland";
 		};
-      };
+	vulpix = {
+		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
+	};
+	eww = {
+		url = "git+https://github.com/elkowar/eww.git";
+	};
+};
 
   outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {
 
