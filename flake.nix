@@ -11,22 +11,23 @@
 		rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
 		submodules = true;
    	};
-#	hyprgrass = {
-#		 url = "git+https://github.com/horriblename/hyprgrass?rev=f888dab948219197e2870cfd261b6f87690484a7";
-#		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
-#	};
-#	hyprspace = {
-#		type = "git";
-#		url = "https://github.com/KZDKM/Hyprspace";
-#		submodules = true;
-#		inputs.hyprland.follows = "hyprland";
-#	};
-#	hyprscroller = {
-#		type = "git";
-#		url = "ssh://git@gitlab.com/bulkiestpizza/hyprscroller";
-#		submodules = true;
-#		inputs.hyprland.follows = "hyprland";
-#		};
+	hyprgrass = {
+		 url = "git+https://github.com/horriblename/hyprgrass?rev=091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
+		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
+	};
+	hyprspace = {
+		type = "git";
+		url = "https://github.com/KZDKM/Hyprspace";
+		rev = "a44d834af279f233a269d065d2e14fe4101d6f41";
+		submodules = true;
+		inputs.hyprland.follows = "hyprland";
+	};
+	hyprscroller = {
+		type = "git";
+		url = "https://gitlab.com/bulkiestpizza/hyprscroller";
+		submodules = true;
+		inputs.hyprland.follows = "hyprland";
+		};
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
 	};

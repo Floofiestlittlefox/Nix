@@ -17,6 +17,7 @@
     };
     virtualisation.docker.enable = true;
     virtualisation.docker.liveRestore = false;
+    virtualisation.waydroid.enable = false;
     imports = [
     	./desktop-hardware-configuration.nix
 	./configuration.nix

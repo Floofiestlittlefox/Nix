@@ -40,6 +40,7 @@ in
 		};
 		flatpak.enable = true;
 		openssh.enable = true;
+		openssh.settings.PasswordAuthentication = false;
 		libinput.enable = true;
 		desktopManager.plasma6.enable = true;
 		displayManager = {
@@ -87,9 +88,6 @@ in
 		    };
 		    wantedBy = [ "default.target" ];
 		  };
-	virtualisation = {
-		waydroid.enable = true;
-		};
     networking = {
         networkmanager.enable = true; 
        firewall.enable = false; 

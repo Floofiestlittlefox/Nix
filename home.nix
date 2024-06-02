@@ -10,10 +10,11 @@
 {
   # You can import other home-manager modules here
   imports = [
-  	./hyprland.nix
-	./ranger.nix
-	./eww.nix
-	./nvim.nix
+  	./applications/hyprland.nix
+	./applications/ranger.nix
+	./applications/eww.nix
+	./applications/nvim.nix
+	./applications/kodi.nix
   ];
 	  home = {
 	    username = "lachlan";

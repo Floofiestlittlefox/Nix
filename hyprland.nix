@@ -62,6 +62,9 @@ wayland.windowManager.hyprland = {
 			"$mod" = "SUPER";
 			monitor = [
 				"eDP-1,1920x1200,0x0,1"
+				"DP-1, 1920x1080,-1920x0,1"
+				"DP-2, 1920x1080,0x0,1"
+				"HDMI-A-1, 1336x768,auto-right,auto"
 			];
 			windowrulev2= [
 				"float,class:^(nwg-drawer)$,title:^(nwg-drawer)$"
@@ -147,9 +150,9 @@ wayland.windowManager.hyprland = {
 			];
 		};
 		plugins = [
-#			inputs.hyprgrass.packages.${pkgs.system}.default
-#			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-			#inputs.hyprscroller.packages.${pkgs.system}.default
+			inputs.hyprgrass.packages.${pkgs.system}.default
+			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+			inputs.hyprscroller.packages.${pkgs.system}.default
 		];
 	};
 }

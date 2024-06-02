@@ -103,6 +103,27 @@
         "type": "github"
       }
     },
+    "hyprgrass": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713739277,
+        "narHash": "sha256-W/0QGczuuJP1Od29IdwylAuz/6Ul84XF8ntwvI3AfVc=",
+        "ref": "refs/heads/main",
+        "rev": "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89",
+        "revCount": 256,
+        "type": "git",
+        "url": "https://github.com/horriblename/hyprgrass"
+      },
+      "original": {
+        "rev": "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89",
+        "type": "git",
+        "url": "https://github.com/horriblename/hyprgrass"
+      }
+    },
     "hyprland": {
       "inputs": {
         "hyprcursor": "hyprcursor",
@@ -179,6 +200,51 @@
         "type": "github"
       }
     },
+    "hyprscroller": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717292084,
+        "narHash": "sha256-rZvYs11ahkJ3ou7sZlZDoqFKbQaS/eoj0nRaQ9pfbBU=",
+        "ref": "refs/heads/main",
+        "rev": "92b10571f7c6c88f1cea7c995e4ff4edfe10527e",
+        "revCount": 1,
+        "submodules": true,
+        "type": "git",
+        "url": "https://gitlab.com/bulkiestpizza/hyprscroller"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://gitlab.com/bulkiestpizza/hyprscroller"
+      }
+    },
+    "hyprspace": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713989021,
+        "narHash": "sha256-oIpcibtKHP8e7yhYilK9+TaiOTApS4TqXQbdKqJpyWQ=",
+        "ref": "refs/heads/main",
+        "rev": "a44d834af279f233a269d065d2e14fe4101d6f41",
+        "revCount": 116,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/KZDKM/Hyprspace"
+      },
+      "original": {
+        "rev": "a44d834af279f233a269d065d2e14fe4101d6f41",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/KZDKM/Hyprspace"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1709038661,
@@ -245,7 +311,10 @@
       "inputs": {
         "eww": "eww",
         "home-manager": "home-manager",
+        "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
+        "hyprscroller": "hyprscroller",
+        "hyprspace": "hyprspace",
         "nixpkgs": "nixpkgs_3",
         "vulpix": "vulpix"
       }

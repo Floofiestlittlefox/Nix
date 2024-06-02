@@ -16,6 +16,7 @@
     };
     hardware.sensor.iio.enable = true;
     virtualisation.docker.enable = false;
+    virtualisation.waydroid.enable = true;
     	imports = [
     		./laptop-hardware-configuration.nix
 	];
