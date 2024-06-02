@@ -12,6 +12,8 @@
   imports = [
   	./hyprland.nix
 	./ranger.nix
+	./eww.nix
+	./nvim.nix
   ];
 	  home = {
 	    username = "lachlan";
@@ -19,7 +21,7 @@
 	    pointerCursor = {
 		gtk.enable = true;
 		name = "Vulpix";
-		package = inputs.vulpix.packages.${pkgs.system}.default
+		package = inputs.vulpix.packages.${pkgs.system}.vulpix;
 		size = 24;
 		};
 	};
