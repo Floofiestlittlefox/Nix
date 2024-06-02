@@ -1,37 +1,24 @@
 { config, pkgs, ... }:
 let 
-   appimage-menu-updater = (pkgs.callPackage ./appimage-menu-updater.nix {});
+   appimage-menu-updater = (pkgs.callPackage ./customApps/appimage-menu-updater.nix {});
 in
 {
-	#nixpkgs.overlays = [
-	#	(final: prev: {
-	#		gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
-	#			mutter = gnomePrev.mutter.overrideAttrs ( old: {
-	#				src = pkgs.fetchgit {
-	#					url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-	#					rev = "663f19bc02c1b4e3d1a67b4ad72d644f9b9d6970";
-	#					sha256 = "sha256-I1s4yz5JEWJY65g+dgprchwZuPGP9djgYXrMMxDQGrs=";
-	#				};
-	#			});
-	#		});
-	#	})
-	#];
     services = {
-        gvfs.enable = true;
-	sysprof.enable = true;
+		gvfs.enable = true;
+		sysprof.enable = true;
 		udev = {
 			enable = true;
 			packages = [ pkgs.gnome.gnome-settings-daemon ];
 		};
-			printing = {
-				enable = true;
-				drivers = [pkgs.cups-dymo];
-			};
-			avahi = {
-				enable = true;
-				nssmdns4 = true;
-				openFirewall = true;
-			};
+		printing = {
+			enable = true;
+			drivers = [pkgs.cups-dymo];
+		};
+		avahi = {
+			enable = true;
+			nssmdns4 = true;
+			openFirewall = true;
+		};
 		pipewire = {
 			enable = true;
 			alsa.enable = true;
@@ -42,10 +29,10 @@ in
 		openssh.enable = true;
 		openssh.settings.PasswordAuthentication = false;
 		libinput.enable = true;
-		desktopManager.plasma6.enable = true;
 		displayManager = {
 			sddm.wayland.enable = false;
 			sddm.enable = false;
+			plasma6.enable = true;
 			defaultSession = "hyprland";
 		};
 		xserver = {
@@ -55,8 +42,8 @@ in
 		};
 		
 
-};
-    sound.enable = true;
+	};
+    	sound.enable = true;
 	hardware = {
 		pulseaudio.enable = false;
 
@@ -75,25 +62,25 @@ in
 			TimeoutStopSec = 10;
 		      };
 		  };
-		};
 
-	systemd.user.services.appimage-menu-updater = {
+		user.services.appimage-menu-updater = {
+			enable = true;
+			description = "AppImage Menu Updater";
+			unitConfig = {
+				Type = "simple";
+			};
+			serviceConfig = {
+				ExecStart = "/bin/sh -c 'HOME=%h ${appimage-menu-updater}'";
+			};
+			wantedBy = [ "default.target" ];
+		};
+	};
+	networking = {
+	    networkmanager.enable = true; 
+	    firewall.enable = false; 
+	};
+    	xdg.portal = {
 		enable = true;
-		description = "AppImage Menu Updater";
-		    unitConfig = {
-		      Type = "simple";
-		    };
-		    serviceConfig = {
-		      ExecStart = "/bin/sh -c 'HOME=%h ${appimage-menu-updater}'";
-		    };
-		    wantedBy = [ "default.target" ];
-		  };
-    networking = {
-        networkmanager.enable = true; 
-       firewall.enable = false; 
-    };
-    xdg.portal = {
-    	enable = true;
 	};
 	security.polkit.enable = true;
 }
