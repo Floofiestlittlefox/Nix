@@ -41,8 +41,8 @@
 		libdisplay-info
 		exaile
 		super-slicer-beta
-		(pkgs.callPackage ./plexamp {})
-		(pkgs.callPackage ./iio-hyprland {})
+		(pkgs.callPackage ./customPackages/plexamp {})
+		(pkgs.callPackage ./customPackages/iio-hyprland {})
 		gnumake
 		mimalloc
 		fzf
