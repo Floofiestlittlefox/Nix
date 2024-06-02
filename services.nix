@@ -29,10 +29,10 @@ in
 		openssh.enable = true;
 		openssh.settings.PasswordAuthentication = false;
 		libinput.enable = true;
+		desktopManager.plasma6.enable = true;
 		displayManager = {
 			sddm.wayland.enable = false;
 			sddm.enable = false;
-			plasma6.enable = true;
 			defaultSession = "hyprland";
 		};
 		xserver = {
