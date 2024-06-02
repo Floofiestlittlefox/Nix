@@ -212,10 +212,12 @@
         "ref": "refs/heads/master",
         "rev": "5c01aac850c21451a5697a6fd7959424b247fe6a",
         "revCount": 52,
+        "submodules": true,
         "type": "git",
         "url": "https://github.com/dawsers/hyprscroller"
       },
       "original": {
+        "submodules": true,
         "type": "git",
         "url": "https://github.com/dawsers/hyprscroller"
       }

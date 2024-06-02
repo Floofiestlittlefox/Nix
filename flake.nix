@@ -22,7 +22,10 @@
 		inputs.hyprland.follows = "hyprland";
 	};
 	hyprscroller = {
-		url = "git+https://github.com/dawsers/hyprscroller";
+		type = "git";
+		url = "https://github.com/dawsers/hyprscroller";
+		rev = "733cfebfd241ecb98298314986896ad46dad3ccd";
+		submodules = true;
 		inputs.hyprland.follows = "hyprland";
 		};
 	vulpix = {
