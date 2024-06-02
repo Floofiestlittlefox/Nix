@@ -1,0 +1,41 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-SzDKxseEcHR5KzPXLwsemyTR/kaM9whxeiJohbL04rs=",
+        "path": "/nix/store/qgbn0imyridkb9527v6gnv6z3jzzprb9-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "waypaper-engine": "waypaper-engine"
+      }
+    },
+    "waypaper-engine": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717112571,
+        "narHash": "sha256-gqICEP3qHcjjONpydMWygWskt3MtWLjMMO5RyCEOB5o=",
+        "ref": "refs/heads/main",
+        "rev": "a8f3a7e401ae211a27d014a7e8aeb06673036cfd",
+        "revCount": 247,
+        "type": "git",
+        "url": "https://github.com/0bCdian/Waypaper-Engine"
+      },
+      "original": {
+        "rev": "a8f3a7e401ae211a27d014a7e8aeb06673036cfd",
+        "type": "git",
+        "url": "https://github.com/0bCdian/Waypaper-Engine"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
