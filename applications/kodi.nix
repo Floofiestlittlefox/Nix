@@ -9,7 +9,6 @@
 		package = pkgs.kodi-wayland.withPackages (kodiPkgs: with kodiPkgs;
 		[
 			jellyfin
-			osmc-skin
 		]);
 		
 	};
