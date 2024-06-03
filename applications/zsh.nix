@@ -37,7 +37,7 @@
 			}
 		];
 		shellAliases = {
-			ls = "lsd --group-directores-first";
+			ls = "lsd --group-directories-first";
 		};
 		initExtra = ''
 			update () { i=$(pwd); cd ~/.config/nix/; sudo nixos-rebuild switch --flake '.#'$(hostname); cd $i }
