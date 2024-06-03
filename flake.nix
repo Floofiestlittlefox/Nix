@@ -27,13 +27,21 @@
 		url = "https://gitlab.com/bulkiestpizza/hyprscroller";
 		submodules = true;
 		inputs.hyprland.follows = "hyprland";
-		};
+	};
+	split-monitor-workspaces = {
+		url = "github:Duckonaut/split-monitor-workspaces?rev=b0ee3953eaeba70f3fba7c4368987d727779826a";
+		inputs.hyprland.follows = "hyprland";
+	};
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
 	};
 	eww = {
 		url = "git+https://github.com/elkowar/eww.git";
 	};
+	#waypaper-engine = {
+	#	url = "path:./customPackages/waypaper-engine/";
+	#};
+
 };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {

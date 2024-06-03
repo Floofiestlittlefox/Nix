@@ -26,6 +26,7 @@
 	};
 	environment.systemPackages = with pkgs; [
 		abiword
+		#inputs.waypaper-engine.packages.${pkgs.system}.waypaper-engine
 		papers
 		calibre
 		tor

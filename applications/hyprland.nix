@@ -5,8 +5,8 @@
 		pkgs.swaynotificationcenter
 		pkgs.swayosd
 		pkgs.anyrun
-		pkgs.waypaper
 		pkgs.swww
+		pkgs.waypaper
 		pkgs.nwg-drawer
 		pkgs.squeekboard
 		pkgs.libnotify
@@ -49,6 +49,11 @@ wayland.windowManager.hyprland = {
 		plugin:scroller {
 			focus_wrap = false
 		}
+		plugin:overview {
+			autoDrag = true
+			exitOnSwitch = true
+			showEmptyWorkspace = false
+		}
 		
 		general {
 			layout = scroller
@@ -64,7 +69,7 @@ wayland.windowManager.hyprland = {
 				"eDP-1,1920x1200,0x0,1"
 				"DP-1, 1920x1080,-1920x0,1"
 				"DP-2, 1920x1080,0x0,1"
-				"HDMI-A-1, 1336x768,auto-right,auto"
+				"HDMI-A-1, 1920x1080,auto-right,1"
 			];
 			windowrulev2= [
 				"float,class:^(nwg-drawer)$,title:^(nwg-drawer)$"
@@ -79,7 +84,7 @@ wayland.windowManager.hyprland = {
 			exec-once = [
 				"swaync &"
 				"swayosd-server &"
-				"waypaper --restore --random --backend=swww &"
+				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
 				"squeekboard &"
 				
@@ -89,11 +94,15 @@ wayland.windowManager.hyprland = {
 				", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
 				", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
 				", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+				", F3, exec, swayosd-client --output-volume raise"
+				", F2, exec, swayosd-client --output-volume lower"
+
 
 			];
 			bindr = [
 				"$mod, P, exec, pkill wofi || wofi --show drun"
 				"$mod,Super_L, overview:toggle"
+				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
 			bindl = [
 				", switch:on:Lenovo Yoga Tablet Mode Control switch, exec, gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true"
@@ -110,7 +119,7 @@ wayland.windowManager.hyprland = {
 				"$mod, F, fullscreen"
 				"$mod, e, exec, dolphin"
 				", Print, exec, grimblast copy area"
-				"$mod, S, workspace, special"
+				#"$mod, S, workspace, special"
 				"$mod, l, scroller:movefocus, r"
 				"$mod, k, scroller:movefocus, u"
 				"$mod, j, scroller:movefocus, d"
@@ -125,6 +134,10 @@ wayland.windowManager.hyprland = {
 				"$mod, minus, resizeactive, -100 0"
 
 				", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+				", F4, exec, swayosd-client --output-volume mute-toggle"
+
+				
+				
 			]
 			 ++ (
 				# workspaces
@@ -136,8 +149,8 @@ wayland.windowManager.hyprland = {
 				      in
 					builtins.toString (x + 1 - (c * 10));
 				    in [
-				      "$mod, ${ws}, workspace, ${toString (x + 1)}"
-				      "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+				      "$mod, ${ws}, split-workspace, ${toString (x + 1)}"
+				      "$mod SHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}"
 				    ]
 				  )
 				  10)
@@ -153,6 +166,7 @@ wayland.windowManager.hyprland = {
 			inputs.hyprgrass.packages.${pkgs.system}.default
 			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
 			inputs.hyprscroller.packages.${pkgs.system}.default
+			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
 		];
 	};
 }

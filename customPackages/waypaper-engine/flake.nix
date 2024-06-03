@@ -1,25 +1,30 @@
 {
 	description = "waypaper-engine";
-	inputs.waypaper-engine = {
-			flake=false;
-			type = "git";
-			url = "https://github.com/0bCdian/Waypaper-Engine";
-			rev = "a8f3a7e401ae211a27d014a7e8aeb06673036cfd";
-		};
 
-	outputs = {self, nixpkgs, waypaper-engine }: {
+	outputs = {self, nixpkgs, }: {
 		packages.x86_64-linux.waypaper-engine =
 		let
 		pkgs = import nixpkgs { system = "x86_64-linux"; };
+		};
+		appimageContents = appimageTools.extractType2 {
+			inherit 
 		in
-		pkgs.stdenv.mkDerivation {
-			name = "waypaper-engine";
-
-			src = waypaper-engine;
-
-			buildInputs = [pkgs.nodejs];
+		pkgs.appimageTools rec {
+			pname = "waypaper-engine";
+			version = "v2.0.3";
+			buildInputs = [
+				pkgs.nodejs
+			];
+			npmPackFlags = [ "--ignore-scripts" ];
+			npmBuildFlags = [ "--log-level=verbose" ];	
+			postPatch = 
+				''
+					npm install
+				'';
 			buildPhase = ''
-				  npm run build
+				npm run build --log-level=verbose
+			'';
+			installPhase= ''
 				  install -m 444 -D release/linux-unpacked/resources/icons/512x512.png $out/share/icons/hicolor/512x512/apps/waypaper-engine.png
 
 				  install -m 444 -D release/linux-unpacked -rt $out/opt/waypaper-engine
