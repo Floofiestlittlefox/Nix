@@ -28,6 +28,7 @@
 		abiword
 		#inputs.waypaper-engine.packages.${pkgs.system}.waypaper-engine
 		papers
+		perl538Packages.LaTeXML
 		calibre
 		tor
 		wineWowPackages.waylandFull
@@ -51,6 +52,7 @@
 		tauon
 		flutter
 		chromium
+		poppler_utils
 		librespot
 		strawberry
 		orca-slicer

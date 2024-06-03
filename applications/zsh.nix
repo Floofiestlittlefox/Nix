@@ -13,7 +13,7 @@
 		enableCompletion = true;
 		enableVteIntegration = true;
 		autocd = true;
-		dotDir = "$HOME/.config/zsh?";
+		dotDir = ".config/zsh";
 		autosuggestion = {
 			enable = true;
 		};
@@ -21,7 +21,7 @@
 			extended = true;
 			expireDuplicatesFirst = true;
 			ignoreDups = true;
-			path = "$ZDOTDIR/.zsh_hist";
+			path = ".config/zsh/.zsh_hist";
 			share = true;
 		};
 		plugins = [
@@ -35,12 +35,27 @@
 					hash = "sha256-zLAW0x38xkcU7850AWHOXTEKJBLIAtnCdqDeSuVGWm8=";
 				};
 			}
+			{
+				name = "zsh-syntax-highlighting";
+				file = "zsh-syntax-highlighting.zsh";
+				src = pkgs.fetchFromGitHub {
+					owner = "zsh-users";
+					repo = "zsh-syntax-highlighting";
+					rev = "e0165eaa730dd0fa321a6a6de74f092fe87630b0";
+					hash ="sha256-4rW2N+ankAH4sA6Sa5mr9IKsdAg7WTgrmyqJ2V1vygQ=";
+				};
+			}
+				
 		];
 		shellAliases = {
 			ls = "lsd --group-directories-first";
+			cd = "z";
+			cdi = "zi";
 		};
 		initExtra = ''
 			update () { i=$(pwd); cd ~/.config/nix/; sudo nixos-rebuild switch --flake '.#'$(hostname); cd $i }
+			(cat ~/.cache/wal/sequences &)
+
 		'';
 		
 	};

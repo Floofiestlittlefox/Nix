@@ -38,13 +38,14 @@
 	eww = {
 		url = "git+https://github.com/elkowar/eww.git";
 	};
+	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	#waypaper-engine = {
 	#	url = "path:./customPackages/waypaper-engine/";
 	#};
 
 };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, nixos-hardware,...}@inputs: {
 
   	nixosConfigurations = {
 		lachlanLaptop = nixpkgs.lib.nixosSystem {
@@ -53,6 +54,7 @@
 		modules = [ 
 			./configuration.nix
 			./laptop/laptop.nix
+			nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 			home-manager.nixosModules.home-manager {
 				home-manager.useGlobalPkgs = true;
 			    	home-manager.useUserPackages = true;

@@ -116,7 +116,9 @@ wayland.windowManager.hyprland = {
 				"$mod Shift, Return, exec, firefox"
 				"$mod, Return, exec, kitty"
 				"$mod, Backspace, killactive"
+
 				"$mod, F, fullscreen"
+				"$mod, Space, togglefloating"
 				"$mod, e, exec, dolphin"
 				", Print, exec, grimblast copy area"
 				#"$mod, S, workspace, special"
