@@ -5,10 +5,7 @@
 
 	];
 	programs.neovim = {
-		enable = false;
-		coc = {
-			enable = true;
-		};
-
+		enable = true;
+		extraLuaConfig = lib.fileContents ./nvim/init.lua;
 	};
 }

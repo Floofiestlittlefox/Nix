@@ -1,0 +1,6 @@
+require("config")
+require("plugins")
+require("keybindings")
+require("pluginconf/lualine")
+require("pluginconf/telescope")
+require("pluginconf/typst")
