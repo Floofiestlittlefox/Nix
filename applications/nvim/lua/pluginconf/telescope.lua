@@ -10,7 +10,9 @@ telescope.setup {
 	      -- Depth for the *.bib file
 	      depth = 1,
 	      -- Custom format for citation label
-	      custom_formats = {},
+	      custom_formats = {
+		{id, 'tex', cite_marker = '\\parencite{%s}'}
+	      },
 	      -- Format to use for citation label.
 	      -- Try to match the filetype by default, or use 'plain'
 	      format = '',

@@ -44,6 +44,12 @@
 	eww = {
 		url = "git+https://github.com/elkowar/eww.git";
 	};
+	nixvim = {
+	    url = "github:nix-community/nixvim";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
+        nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
+        flake-utils.url = "github:numtide/flake-utils";
 	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	#waypaper-engine = {
 	#	url = "path:./customPackages/waypaper-engine/";
@@ -51,7 +57,7 @@
 
 };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nixos-hardware,...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, nixos-hardware, nixneovimplugins, ...}@inputs: {
 
   	nixosConfigurations = {
 		lachlanLaptop = nixpkgs.lib.nixosSystem {

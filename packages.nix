@@ -1,5 +1,8 @@
 {libs, config, pkgs, inputs, ... }:
 {
+  nixpkgs.overlays = [
+    inputs.nixneovimplugins.overlays.default
+  ];
 	programs = {
 		ssh.askPassword = "true";
 		zsh.enable = true;
