@@ -11,6 +11,12 @@
 		rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
 		submodules = true;
    	};
+	hyprland-plugins = {
+		type = "git";
+		url = "https://github.com/hyprwm/hyprland-plugins";
+		rev = "e9457e08ca3ff16dc5a815be62baf9e18b539197";
+		inputs.hyprland.follows = "hyprland";
+	};
 	hyprgrass = {
 		 url = "git+https://github.com/horriblename/hyprgrass?rev=091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
 		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
