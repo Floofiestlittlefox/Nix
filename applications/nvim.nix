@@ -1,6 +1,11 @@
-{pkgs, lib, config, inputs, ...}:
+{pkgs, inputs, ...}:
 
 {
+  home.packages = with pkgs;
+    [
+      texlab
+      nixd
+    ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
   ];
@@ -26,6 +31,7 @@
 
     extraPlugins = with pkgs.vimPlugins; [
       vim-nix
+      yuck-vim
       pkgs.vimExtraPlugins.telescope-bibtex-nvim
       pkgs.vimExtraPlugins.nvim-lspconfig
     ];
@@ -99,6 +105,8 @@
 
     extraConfigLua = ''
       require"telescope".load_extension("bibtex")
+      require'lspconfig'.nixd.setup{}
+      require'lspconfig'.texlab.setup{}
     '';
 
   };

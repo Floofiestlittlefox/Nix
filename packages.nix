@@ -31,6 +31,7 @@
 		abiword
 		#inputs.waypaper-engine.packages.${pkgs.system}.waypaper-engine
 		papers
+                xournalpp
 		obsidian
 		perl538Packages.LaTeXML
 		calibre

@@ -1,4 +1,4 @@
-{pkgs, lib, config, inputs, ... }:
+{pkgs, inputs, ... }:
 {
 	home.packages = [
 		pkgs.grimblast
@@ -53,7 +53,20 @@ wayland.windowManager.hyprland = {
 			autoDrag = true
 			exitOnSwitch = true
 			showEmptyWorkspace = false
+                        hideRealLayers = false
+                        centerAligned = false
+                        hideTopLayers = true
 		}
+
+                plugin:hyprexpo {
+                  gap_size = 5
+                  workspace_method = center current
+
+                  enable_gesture = true
+                  gesture_fingers = 3
+                  gesture_distance = 300
+                  gesture_posititive = true
+                }
 		
 		general {
 			layout = scroller
@@ -61,6 +74,18 @@ wayland.windowManager.hyprland = {
 		}
 
 		debug:disable_logs=false
+
+                submap=overview
+                  bindn=, Return, submap, reset
+                  bindn=, escape, submap, reset
+                  bindn=$mod, Super_l, submap, reset
+                  bindn=, catchall,exec, nwg-drawer 
+                  bindrn=,catchall, submap, reset
+                submap=reset
+
+
+
+
 			
 		'';
 		settings = {
@@ -87,6 +112,7 @@ wayland.windowManager.hyprland = {
 				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
 				"squeekboard &"
+                                "nwg-drawer -r"
 				
 			];
 			bindel = [
@@ -102,6 +128,7 @@ wayland.windowManager.hyprland = {
 			bindr = [
 				"$mod, P, exec, pkill wofi || wofi --show drun"
 				"$mod,Super_L, overview:toggle"
+                                "$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
 			bindl = [
@@ -167,9 +194,11 @@ wayland.windowManager.hyprland = {
 		plugins = [
 			inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
 			inputs.hyprgrass.packages.${pkgs.system}.default
-			inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+                        #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+                        inputs.hyprspace.packages.${pkgs.system}.Hyprspace
 			inputs.hyprscroller.packages.${pkgs.system}.default
 			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+                        #inputs.hycov.packages.${pkgs.system}.hycov
 		];
 	};
 }

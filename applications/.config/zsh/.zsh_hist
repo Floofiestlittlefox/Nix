@@ -515,3 +515,72 @@
 : 1717500469:0;update
 : 1717500529:0;ls
 : 1717500543:0;cd assignments
+: 1717540913:8;git pull
+: 1717540944:237;update
+: 1717541185:0;ls
+: 1717541198:3;journalctl -xeu home-manager-lachlan.service
+: 1717541211:0;rm ~/.config/nvim/
+: 1717541216:0;rm -rf ~/.config/nvim/
+: 1717541224:0;ls
+: 1717541230:13;update
+: 1717541300:0;		swayosd --help
+: 1717541309:0;swayosd-client 
+: 1717541311:0;swayosd-client --help
+: 1717541536:0;cd Ancient
+: 1717541536:0;ls
+: 1717541540:24;nvim Ancient.tex
+: 1717541567:8;nvim
+: 1717541580:0;cd ~/.config/nvim
+: 1717541580:0;ls
+: 1717541584:0;cd nvim
+: 1717541586:0;cd nix
+: 1717541594:0;ls
+: 1717541598:4;nvim flake.nix
+: 1717541605:0;cd applications
+: 1717541605:0;lls
+: 1717541606:0;ls
+: 1717541611:0;nvim nvim.nix
+: 1717541622:0;update
+: 1717541673:0;rm -rf ~/.local/share/nvim/
+: 1717541676:0;vim
+: 1717541677:0;nvim
+: 1717541692:0;update
+: 1717541725:0;ls
+: 1717541726:25;nvim flake.nix
+: 1717541780:0;ls
+: 1717541786:0;cd desktop
+: 1717541786:0;ls
+: 1717541787:0;cd ..
+: 1717541787:1;ls
+: 1717541789:0;cd applications
+: 1717541789:0;ls
+: 1717541792:0;nvim nvim.nix
+: 1717541822:0;cat ~/.config/nvim/init.lua
+: 1717541842:0;reboot
+: 1717541951:0;ls
+: 1717541954:0;cd applications
+: 1717541954:0;ls
+: 1717541978:0;nvim nvim.nix
+: 1717542750:0;ls
+: 1717542769:0;nvim ls
+: 1717542775:0;nvim
+: 1717543190:0;update
+: 1717543203:0;nvim 
+: 1717543226:0;update
+: 1717543262:0;ls
+: 1717543295:0;nvim 
+: 1717645549:0;ls
+: 1717645551:76;nvim
+: 1717645628:58;update
+: 1717645693:27;nvim
+: 1717645720:54;update
+: 1717645924:151;nix-shell -p walker
+: 1717646076:0;ls
+: 1717646077:32;nvim
+: 1717646109:0;ls
+: 1717646111:0;cd applications
+: 1717646111:0;ls
+: 1717646113:0;nvim walker.nix
+: 1717646403:0;update
+: 1717646408:0;ls
+: 1717646412:0;cd ..

@@ -109,6 +109,27 @@
         "type": "github"
       }
     },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "walker",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709336216,
+        "narHash": "sha256-Dt/wOWeW6Sqm11Yh+2+t0dfEWxoMxGBvv3JpIocFl9E=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "f7b3c975cf067e56e7cda6cb098ebe3fb4d74ca2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-root": {
       "locked": {
         "lastModified": 1713493429,
@@ -284,6 +305,27 @@
         "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
+      }
+    },
+    "hycov": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713326226,
+        "narHash": "sha256-dsrkrf+6aFavDg9QuhFO9j0IewDtLRebDfYc9rRmTEQ=",
+        "ref": "refs/heads/main",
+        "rev": "05fb15703d07a372b14a3260a337de13d1c16b91",
+        "revCount": 275,
+        "type": "git",
+        "url": "https://github.com/DreamMaoMao/hycov"
+      },
+      "original": {
+        "rev": "05fb15703d07a372b14a3260a337de13d1c16b91",
+        "type": "git",
+        "url": "https://github.com/DreamMaoMao/hycov"
       }
     },
     "hyprcursor": {
@@ -655,6 +697,22 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1710451336,
+        "narHash": "sha256-pP86Pcfu3BrAvRO7R64x7hs+GaQrjFes+mEPowCfkxY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d691274a972b3165335d261cc4671335f5c67de9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixvim": {
       "inputs": {
         "devshell": "devshell",
@@ -714,6 +772,7 @@
         "eww": "eww",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
+        "hycov": "hycov",
         "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
@@ -724,7 +783,8 @@
         "nixpkgs": "nixpkgs_4",
         "nixvim": "nixvim",
         "split-monitor-workspaces": "split-monitor-workspaces",
-        "vulpix": "vulpix"
+        "vulpix": "vulpix",
+        "walker": "walker"
       }
     },
     "rust-overlay": {
@@ -883,6 +943,25 @@
       "original": {
         "type": "git",
         "url": "https://gitlab.com/bulkiestpizza/vulpix-cursors"
+      }
+    },
+    "walker": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1712590509,
+        "narHash": "sha256-frS6YLwgFcBGsbwAFfnqxY05ig9uIIaXtbKrhJYmGO4=",
+        "owner": "abenz1267",
+        "repo": "walker",
+        "rev": "0c4ba5f485ae51064101c56f3e9e0cda5196fd3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "abenz1267",
+        "repo": "walker",
+        "type": "github"
       }
     },
     "wlroots": {

@@ -51,6 +51,14 @@
         nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
         flake-utils.url = "github:numtide/flake-utils";
 	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+        hycov={
+          type = "git";
+          rev = "05fb15703d07a372b14a3260a337de13d1c16b91";
+          url = "https://github.com/DreamMaoMao/hycov";
+          inputs.hyprland.follows = "hyprland";
+        };
+
+        walker.url = "github:abenz1267/walker";
 	#waypaper-engine = {
 	#	url = "path:./customPackages/waypaper-engine/";
 	#};

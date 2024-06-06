@@ -16,6 +16,7 @@
 	./applications/nvim.nix
 	./applications/kodi.nix
 	./applications/zsh.nix
+        ./applications/walker.nix
   ];
 	  home = {
 	    username = "lachlan";
