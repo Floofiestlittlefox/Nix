@@ -40,6 +40,7 @@ wayland.windowManager.hyprland = {
 		gestures {
 			workspace_swipe=true
 			workspace_swipe_cancel_ratio = 0.15
+
 			workspace_swipe_touch=true
 		}
 		plugin:touch_gestures {
@@ -126,9 +127,9 @@ wayland.windowManager.hyprland = {
 
 			];
 			bindr = [
-				"$mod, P, exec, pkill wofi || wofi --show drun"
+                                #"$mod, P, exec, pkill wofi || wofi --show drun"
 				"$mod,Super_L, overview:toggle"
-                                "$mod, Super_L, submap, overview"
+                                #"$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
 			bindl = [

@@ -32,7 +32,7 @@
 	i18n = {
 		defaultLocale = "en_US.UTF-8";
 		inputMethod = {
-			enabled = "ibus";
+			enabled = "fcitx5";
 			ibus.engines = with pkgs.ibus-engines; [ mozc ];
 			fcitx5 = {
 				plasma6Support = true;
