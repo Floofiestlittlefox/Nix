@@ -41,11 +41,17 @@ wayland.windowManager.hyprland = {
 			workspace_swipe=true
 			workspace_swipe_cancel_ratio = 0.15
 
+                        workspace_swipe_distance = 700
 			workspace_swipe_touch=true
 		}
 		plugin:touch_gestures {
 			sensitivity = 6.0
 			workspace_swipe_fingers = 3
+
+                        hyprgrass-bind = ,swipe:4:ld,killactive
+
+                        hyprgrass-bindm = , longpress:2, movewindow
+                        hyprgrass-bindm = , longpress:3, resizewindows
 		}
 		plugin:scroller {
 			focus_wrap = false
@@ -71,6 +77,7 @@ wayland.windowManager.hyprland = {
 		
 		general {
 			layout = scroller
+                        resize_on_border = true
 
 		}
 
@@ -98,8 +105,7 @@ wayland.windowManager.hyprland = {
 			windowrulev2= [
 				"float,class:^(nwg-drawer)$,title:^(nwg-drawer)$"
 				"pseudo,class:^(squeekboard)$,title:^(squeekboard)$"
-				
-
+                                "stayfocused,class:^(walker)$,title::^(walker)$"
 			];
 			animation = [
 				"windows,1,3,default,popin 80%"
@@ -125,7 +131,7 @@ wayland.windowManager.hyprland = {
 
 			];
 			bindr = [
-                                #"$mod, P, exec, pkill wofi || wofi --show drun"
+                                "$mod, P, exec, walker"
 				"$mod,Super_L, overview:toggle"
                                 "$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"

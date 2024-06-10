@@ -79,8 +79,8 @@ in
 	    networkmanager.enable = true; 
 	    firewall.enable = false; 
 	};
-    	xdg.portal = {
-		enable = true;
-	};
+        #xdg.portal = {
+	#	enable = true;
+	#};
 	security.polkit.enable = true;
 }
