@@ -1,7 +1,7 @@
-{pkgs, inputs}:
+{pkgs, inputs, ...}:
 {
   imports = [
-    inputs.ags.homeManagerModules.defaults
+    inputs.ags.homeManagerModules.default
   ];
 
   programs.ags = {
@@ -14,6 +14,7 @@
       webkitgtk
       accountsservice
       bun
+      fuzzel
     ];
   };
 }

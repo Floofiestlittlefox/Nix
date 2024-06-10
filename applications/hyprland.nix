@@ -50,6 +50,8 @@ wayland.windowManager.hyprland = {
 
                         hyprgrass-bind = ,swipe:4:ld,killactive
 
+
+
                         hyprgrass-bindm = , longpress:2, movewindow
                         hyprgrass-bindm = , longpress:3, resizewindows
 		}
