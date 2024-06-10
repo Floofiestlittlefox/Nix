@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     owner = "nine7nine";
     repo = pname;
     rev = "${version}";
-    sha256 = "sha256-9gDxMH1hghqjcXlbda7CHjDdjcjApjjie7caihKIg9M=";
+    sha256 = "sha256-evSLaGxIczQJgvGnDj8j+35LEhXjsYcUhIVXKaElwSw=";
   };
 
   postPatch = ''

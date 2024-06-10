@@ -50,7 +50,7 @@
 		super-slicer-beta
 		(callPackage ./customPackages/plexamp {})
 		(callPackage ./customPackages/iio-hyprland {})
-                (callPackage ./customPackages/wvkbd-n7n/ {})
+                (callPackage ./customPackages/wvkbd-n7n {})
 		gnumake
 		mimalloc
 		fzf

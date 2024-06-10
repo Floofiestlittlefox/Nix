@@ -77,10 +77,8 @@ wayland.windowManager.hyprland = {
 		debug:disable_logs=false
 
                 submap=overview
-                  bindn=, Return, submap, reset
-                  bindn=, escape, submap, reset
-                  bindn=$mod, Super_l, submap, reset
-                  bindn=, catchall,exec, nwg-drawer 
+                  bindn=$mod, Super_l, exec, nwg-drawer
+                  bindn=$mod, Super_L, submap, reset
                   bindrn=,catchall, submap, reset
                 submap=reset
 
@@ -129,7 +127,7 @@ wayland.windowManager.hyprland = {
 			bindr = [
                                 #"$mod, P, exec, pkill wofi || wofi --show drun"
 				"$mod,Super_L, overview:toggle"
-                                #"$mod, Super_L, submap, overview"
+                                "$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
 			bindl = [

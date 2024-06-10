@@ -28,7 +28,6 @@
 
   programs.nixvim = {
     enable = true;
-
     extraPlugins = with pkgs.vimPlugins; [
       vim-nix
       yuck-vim
@@ -38,7 +37,14 @@
 
     plugins = {
       lightline.enable = true;
-      parinfer-rust.enable = true;
+      treesitter.enable = true;
+      parinfer-rust = {
+        enable = true;
+        settings = {
+          mode = "smart";
+          force_balance = true;
+        };
+      };
       coq-nvim = {
         enable = true;
         settings = {
