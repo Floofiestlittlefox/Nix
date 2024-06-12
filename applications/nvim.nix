@@ -5,6 +5,7 @@
     [
       texlab
       nixd
+      typst-lsp
     ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
@@ -36,6 +37,12 @@
     ];
 
     plugins = {
+      typst-vim = {
+        enable = true;
+        settings = {
+          pdf_viewer = "sioyek";
+        };
+      };
       lightline.enable = true;
       treesitter.enable = true;
       parinfer-rust = {
@@ -56,6 +63,7 @@
         settings = {
           view_general_viewer = "sioyek";
         };
+        texlivePackage = pkgs.texlive.combined.scheme-full;
       };
 
       telescope = {
@@ -70,7 +78,7 @@
               custom_formats = [
                 {
                   id = "tex"; 
-                  cite_marker = "\parencite{%s}";
+                  cite_marker = "\\parencite{%s}";
                 }
               ];
 	      context_fallback = true;
@@ -110,6 +118,7 @@
     };
 
     extraConfigLua = ''
+      vim.g['tex_flavour'] = 'latex'
       require"telescope".load_extension("bibtex")
       require'lspconfig'.nixd.setup{}
       require'lspconfig'.texlab.setup{}

@@ -15,6 +15,13 @@
       accountsservice
       bun
       fuzzel
+      matugen
+      hyprlock
+      hyprpaper
+      hyprpicker
+      fd
+      dart-sass
+      brightnessctl
     ];
   };
 }

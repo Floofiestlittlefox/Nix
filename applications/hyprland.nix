@@ -47,13 +47,6 @@ wayland.windowManager.hyprland = {
 		plugin:touch_gestures {
 			sensitivity = 6.0
 			workspace_swipe_fingers = 3
-
-                        hyprgrass-bind = ,swipe:4:ld,killactive
-
-
-
-                        hyprgrass-bindm = , longpress:2, movewindow
-                        hyprgrass-bindm = , longpress:3, resizewindows
 		}
 		plugin:scroller {
 			focus_wrap = false
@@ -78,7 +71,6 @@ wayland.windowManager.hyprland = {
                 }
 		
 		general {
-			layout = scroller
                         resize_on_border = true
 
 		}
@@ -115,6 +107,7 @@ wayland.windowManager.hyprland = {
 			];
 			exec-once = [
 				"swaync &"
+                                "fcitx5 &"
 				"swayosd-server &"
 				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
@@ -135,7 +128,7 @@ wayland.windowManager.hyprland = {
 			bindr = [
                                 "$mod, P, exec, walker"
 				"$mod,Super_L, overview:toggle"
-                                "$mod, Super_L, submap, overview"
+                                #"$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
 			bindl = [
@@ -146,6 +139,10 @@ wayland.windowManager.hyprland = {
 	
 			bind =
 			[
+
+                                 ", swipe:4:ld,killactive"
+
+                                
 				"$mod Shift, Q, exit"
 				"$mod Shift, Return, exec, firefox"
 				"$mod, Return, exec, kitty"
@@ -156,15 +153,14 @@ wayland.windowManager.hyprland = {
 				"$mod, e, exec, dolphin"
 				", Print, exec, grimblast copy area"
 				#"$mod, S, workspace, special"
-				"$mod, l, scroller:movefocus, r"
-				"$mod, k, scroller:movefocus, u"
-				"$mod, j, scroller:movefocus, d"
-				"$mod, h, scroller:movefocus, l"
-				"$mod Shift, l, scroller:movewindow, r"
-				"$mod Shift, k, scroller:movewindow, u"
-				"$mod Shift, j, scroller:movewindow, d"
-				"$mod Shift, h, scroller:movewindow, l"
-				"$mod, M, scroller:alignwindow, c"
+				"$mod, l, movefocus, r"
+				"$mod, k, movefocus, u"
+				"$mod, j, movefocus, d"
+				"$mod, h, movefocus, l"
+				"$mod Shift, l, movewindow, r"
+				"$mod Shift, k, movewindow, u"
+				"$mod Shift, j, movewindow, d"
+				"$mod Shift, h, movewindow, l"
 
 				"$mod, equal, resizeactive, 100 0"
 				"$mod, minus, resizeactive, -100 0"
@@ -196,6 +192,9 @@ wayland.windowManager.hyprland = {
 				"$mod, mouse:272, movewindow"
 				"$mod, mouse:273, resizewindow"
 				"$mod ALT, mouse:272, resizewindow"
+                                ", longpress:2, movewindow"
+                                ", longpress:3, resizewindows"
+
 			];
 		};
 		plugins = [
@@ -203,7 +202,7 @@ wayland.windowManager.hyprland = {
 			inputs.hyprgrass.packages.${pkgs.system}.default
                         #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
                         inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-			inputs.hyprscroller.packages.${pkgs.system}.default
+                        #inputs.hyprscroller.packages.${pkgs.system}.default
 			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
                         #inputs.hycov.packages.${pkgs.system}.hycov
 		];
