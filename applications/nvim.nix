@@ -7,6 +7,7 @@
       nixd
       typst-lsp
       ltex-ls
+      javascript-typescript-langserver
     ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
@@ -66,6 +67,7 @@
       parinfer-rust = {
         enable = true;
         settings = {
+          enabled = true;
           mode = "smart";
           force_balance = true;
         };
@@ -139,6 +141,8 @@
     extraConfigLua = ''
       vim.g['tex_flavour'] = 'latex'
       require"telescope".load_extension("bibtex")
+      require("lspconfig")["javascript-typescript-language-server"].setup(coq.lsp_ensure_capabilities("javascript-typescript-language-server"))
+      
     '';
 
   };
