@@ -31,6 +31,9 @@
 		abiword
 		#inputs.waypaper-engine.packages.${pkgs.system}.waypaper-engine
 		papers
+                kanjidraw
+                jiten
+                jabref
                 xournalpp
 		obsidian
 		perl538Packages.LaTeXML
@@ -43,7 +46,6 @@
 		bibtool
 		papis
 		prusa-slicer
-		zoxide
 		amberol
 		libdisplay-info
 		exaile
@@ -52,25 +54,15 @@
 		(callPackage ./customPackages/iio-hyprland {})
                 (callPackage ./customPackages/wvkbd-n7n {})
 		gnumake
-		mimalloc
 		fzf
 		pandoc
-		tauon
-		flutter
 		chromium
 		poppler_utils
-		librespot
-		strawberry
-		orca-slicer
-		sonixd
 		libwacom
-		sublime-music
 		lsof
 		rnote
 		yt-dlp
-		firefoxpwa
 		kdenlive
-		gnome.gnome-tweaks
 		joplin
 		joplin-desktop
 		supersonic
@@ -83,17 +75,22 @@
 		lightly-boehs
 		variety
 		tautulli
+                kdePackages.qtwayland
+                libsForQt5.qt5.qtwayland
 		qalculate-qt
 		qownnotes
 		plasma-pass
 		krita
 		plasma-hud
 		kdePackages.kmail
+                kdePackages.dolphin
+                kdePackages.okular
 		kdePackages.merkuro
 		kdePackages.polkit-kde-agent-1
 		maliit-keyboard
 		maliit-framework
 		kdePackages.discover
+                tagainijisho
 		p3x-onenote
 		acpi
 		picard
@@ -112,7 +109,6 @@
 		wl-clipboard
 		bemenu
 		swaybg
-		gnome-browser-connector
 		swaylock
 		swayidle
 		swaysome

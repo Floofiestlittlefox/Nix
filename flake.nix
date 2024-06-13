@@ -8,34 +8,30 @@
 	hyprland = {
 		type = "git";
 		url="https://github.com/hyprwm/Hyprland";
-		rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
+                rev="ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
 		submodules = true;
    	};
 	hyprland-plugins = {
 		type = "git";
 		url = "https://github.com/hyprwm/hyprland-plugins";
-		rev = "e9457e08ca3ff16dc5a815be62baf9e18b539197";
+                rev = "8571aa9badf7db9c4911018a5611c038cc776256";
 		inputs.hyprland.follows = "hyprland";
 	};
 	hyprgrass = {
-		 url = "git+https://github.com/horriblename/hyprgrass?rev=091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
+                type = "git";
+		 url = "https://github.com/horriblename/hyprgrass";
+                 rev = "d9b556630de0130564508b73783dc3f38412e431";
 		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
 	};
-	hyprspace = {
-		type = "git";
-		url = "https://github.com/KZDKM/Hyprspace";
-		rev = "a44d834af279f233a269d065d2e14fe4101d6f41";
-		submodules = true;
-		inputs.hyprland.follows = "hyprland";
-	};
-	hyprscroller = {
-		type = "git";
-		url = "https://gitlab.com/bulkiestpizza/hyprscroller";
-		submodules = true;
-		inputs.hyprland.follows = "hyprland";
-	};
+        #hyprspace = {
+	#	type = "git";
+	#	url = "https://github.com/KZDKM/Hyprspace";
+        #        #rev = "a44d834af279f233a269d065d2e14fe4101d6f41";
+	#	submodules = true;
+	#	inputs.hyprland.follows = "hyprland";
+	#};
 	split-monitor-workspaces = {
-		url = "github:Duckonaut/split-monitor-workspaces?rev=b0ee3953eaeba70f3fba7c4368987d727779826a";
+		url = "github:Duckonaut/split-monitor-workspaces";
 		inputs.hyprland.follows = "hyprland";
 	};
 	vulpix = {

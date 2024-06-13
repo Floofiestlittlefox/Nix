@@ -6,6 +6,7 @@
       texlab
       nixd
       typst-lsp
+      ltex-ls
     ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
@@ -32,8 +33,8 @@
     extraPlugins = with pkgs.vimPlugins; [
       vim-nix
       yuck-vim
+      vim-javascript
       pkgs.vimExtraPlugins.telescope-bibtex-nvim
-      pkgs.vimExtraPlugins.nvim-lspconfig
     ];
 
     plugins = {
@@ -43,6 +44,23 @@
           pdf_viewer = "sioyek";
         };
       };
+      lsp = {
+        enable = true;
+        servers = {
+          ltex = {
+            enable = true;
+            settings = {
+              language = "en-AU";
+              completionEnabled = true;
+            };
+          };
+          nixd = {
+            enable = true;
+          };
+        };
+      };
+
+
       lightline.enable = true;
       treesitter.enable = true;
       parinfer-rust = {
@@ -116,12 +134,11 @@
 
       shiftwidth = 2;
     };
+      
 
     extraConfigLua = ''
       vim.g['tex_flavour'] = 'latex'
       require"telescope".load_extension("bibtex")
-      require'lspconfig'.nixd.setup{}
-      require'lspconfig'.texlab.setup{}
     '';
 
   };

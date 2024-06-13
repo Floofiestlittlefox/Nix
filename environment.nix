@@ -9,6 +9,10 @@
 
 	QT_QPA_PLATFORM = "wayland";
 
+        QT_IM_MODULE="fcitx";
+        QT5_IM_MODULE="fcitx";
+        GTK_IM_MODULE="fcitx";
+
         #  Not officially in the specification
         XDG_BIN_HOME    = "$HOME/.local/bin";
         PATH = [ 

@@ -31,14 +31,15 @@ in
 		libinput.enable = true;
 		desktopManager.plasma6.enable = true;
 		displayManager = {
-			sddm.wayland.enable = false;
-			sddm.enable = false;
+			sddm.wayland.enable = true;
+			sddm.enable = true;
 			defaultSession = "hyprland";
 		};
 		xserver = {
-			enable = true;
-			displayManager.gdm.enable = true;
-			desktopManager.gnome.enable = true;
+			enable = false;
+			displayManager.gdm.enable = false;
+                        desktopManager.gnome.enable = false;
+                        desktopManager.runXdgAutostartIfNone = false;
 		};
 		
 
@@ -63,6 +64,7 @@ in
 		      };
 		  };
 
+
 		user.services.appimage-menu-updater = {
 			enable = true;
 			description = "AppImage Menu Updater";
@@ -79,8 +81,8 @@ in
 	    networkmanager.enable = true; 
 	    firewall.enable = false; 
 	};
-        #xdg.portal = {
-	#	enable = true;
-	#};
+        xdg.portal = {
+		enable = true;
+	};
 	security.polkit.enable = true;
 }

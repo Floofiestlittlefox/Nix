@@ -12,7 +12,7 @@
   imports = [
   	./applications/hyprland.nix
 	./applications/ranger.nix
-	./applications/eww.nix
+        ./applications/ags.nix
 	./applications/nvim.nix
 	./applications/kodi.nix
 	./applications/zsh.nix
@@ -28,6 +28,13 @@
 		size = 24;
 		};
 	};
+        #i18n.inputMethod = {
+        #    enabled = "fcitx5";
+        #    fcitx5.addons = with pkgs; [
+        #      fcitx5-mozc
+        #      fcitx5-gtk
+        #    ];
+        #  };
   	gtk = {
 		enable = true;
 		cursorTheme = {
@@ -35,8 +42,7 @@
 			size = 24;
 		};
 		iconTheme = {
-			package = pkgs.papirus-icon-theme;
-			name = "Papirus-Dark";
+			name = "Breeze-Dark";
 		};
 		theme = {
 			package = pkgs.orchis-theme;
@@ -47,17 +53,24 @@
 			name = "Sans";
 			size = 11;
 		};
+                gtk3.extraConfig = {
+                  gtk-im-module="fcitx";
+                };
+                gtk2.extraConfig = ''
+                  gtk-im-module=fcitx
+                '';
+                gtk4.extraConfig = { 
+                  gtk-im-module="fcitx";
+                };
 	};
 	qt = {
 		enable = true;
-		platformTheme = {
-			name = "kde";
-		};
-		#style = {
-		#	package = pkgs.orchis-theme;
-		#	name = "orchis-orange-compat-dark";
+                platformTheme.name = "kde";
+                #style = {
+		#	name = "kvantum";
 		#};
 	};
+
 
 
 	
@@ -69,29 +82,29 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  programs.papis = {
-  	enable = true;
-	libraries = {
-		Default = {
-			isDefault = true;
-			name = "Default";
-			settings = {
-				dir = "~/assignments/Documents/Papers";
-			};
-		};
-	};
-	settings = {
-		editor = "nvim";
-		file-browser = "ranger";
-		match-format = "{doc[tags]}{doc.subfolder}{doc[title]}{doc[author]}{doc[year]}";
-		header-format = "<red>{doc.html_escape[title]}</red>
-  <span color='#ff00ff'>  {doc.html_escape[author]}</span>
-  <yellow>   ({doc.html_escape[year]})</yellow>";
-		add-folder-name = "{doc[title]} {doc[author]}";
-		add-file-name = "{doc[title]} {doc[author]}";
-	
-	};
-};
+#  programs.papis = {
+#  	enable = true;
+#	libraries = {
+#		Default = {
+#			isDefault = true;
+#			name = "Default";
+#			settings = {
+#				dir = "~/assignments/Documents/Papers";
+#			};
+#		};
+#	};
+#	settings = {
+#		editor = "nvim";
+#		file-browser = "ranger";
+#		match-format = "{doc[tags]}{doc.subfolder}{doc[title]}{doc[author]}{doc[year]}";
+#		header-format = "<red>{doc.html_escape[title]}</red>
+#  <span color='#ff00ff'>  {doc.html_escape[author]}</span>
+#  <yellow>   ({doc.html_escape[year]})</yellow>";
+#		add-folder-name = "{doc[title]} {doc[author]}";
+#		add-file-name = "{doc[title]} {doc[author]}";
+#	
+#	};
+#};
 	
   
 

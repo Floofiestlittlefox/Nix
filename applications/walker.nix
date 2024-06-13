@@ -16,11 +16,11 @@
       align = {
         ignore_exclusive=false;
         horizontal = "center";
-        vertical = "start";
+        vertical = "center";
         width = 400;
         anchors = {
-          top = true;
-          left = true;
+          top = false;
+          left = false;
         };
         margins = {
           left = 10;

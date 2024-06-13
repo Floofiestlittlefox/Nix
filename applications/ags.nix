@@ -3,6 +3,21 @@
   imports = [
     inputs.ags.homeManagerModules.default
   ];
+  home.packages = with pkgs; [
+      gtksourceview
+      webkitgtk
+      accountsservice
+      bun
+      fuzzel
+      matugen
+      hyprlock
+      hyprpaper
+      hyprpicker
+      fd
+      dart-sass
+      brightnessctl
+    ];
+
 
   programs.ags = {
     enable = true;

@@ -30,16 +30,16 @@
 
 	time.timeZone = "Australia/Brisbane";
 	i18n = {
-		defaultLocale = "en_US.UTF-8";
+		defaultLocale = "en_AU.UTF-8";
 		inputMethod = {
 			enabled = "fcitx5";
 			ibus.engines = with pkgs.ibus-engines; [ mozc ];
 			fcitx5 = {
-				plasma6Support = true;
-				waylandFrontend = true;
+				plasma6Support = false;
+                                waylandFrontend = true;
 				addons = with pkgs; [
+                                        fcitx5-rime
 					fcitx5-mozc
-					fcitx5-gtk
 				];
 			};
 		};
@@ -50,6 +50,21 @@
 		font = "Lat2-Terminus16";
 		useXkbConfig = true;
 	};
+
+        fonts = {
+          enableDefaultPackages = true;
+          packages = with pkgs; [
+            liberation_ttf
+            kanji-stroke-order-font
+          ];
+          fontconfig = {
+            defaultFonts = {
+              serif = [ "Liberation Serif" "KanjiStrokeOrders" ];
+              sansSerif = [ "Liberation Sans" "KanjiStrokeOrders" ];
+              monospace = [ "Liberation Mono" ];
+            };
+          };
+        };
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	programs.zsh.enable = true;
@@ -63,5 +78,9 @@
 
 		};
 	};
+        swapDevices = [{
+          device = "/var/lib/swapfile";
+          size = 16*1024;
+        }];
 	system.stateVersion = "23.11";
 }

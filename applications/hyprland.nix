@@ -25,7 +25,7 @@ wayland.windowManager.hyprland = {
 		}
 		device {
 			name = at-translated-set-2-keyboard
-			repeat_rate=50
+			repeat_rate=100
 			repeat_delay=300
 			middle_button_emulation=0
 							      
@@ -77,11 +77,6 @@ wayland.windowManager.hyprland = {
 
 		debug:disable_logs=false
 
-                submap=overview
-                  bindn=$mod, Super_l, exec, nwg-drawer
-                  bindn=$mod, Super_L, submap, reset
-                  bindrn=,catchall, submap, reset
-                submap=reset
 
 
 
@@ -112,7 +107,8 @@ wayland.windowManager.hyprland = {
 				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
 				"squeekboard &"
-                                "nwg-drawer -r"
+                                "wvkbd-mobintl"
+                                "ags"
 				
 			];
 			bindel = [
@@ -127,7 +123,7 @@ wayland.windowManager.hyprland = {
 			];
 			bindr = [
                                 "$mod, P, exec, walker"
-				"$mod,Super_L, overview:toggle"
+                                #"$mod,Super_L, overview:toggle"
                                 #"$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"
 			];
@@ -200,9 +196,8 @@ wayland.windowManager.hyprland = {
 		plugins = [
 			inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
 			inputs.hyprgrass.packages.${pkgs.system}.default
+                        #inputs.hyprspace.packages.${pkgs.system}.Hyprspace
                         #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-                        inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-                        #inputs.hyprscroller.packages.${pkgs.system}.default
 			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
                         #inputs.hycov.packages.${pkgs.system}.hycov
 		];
