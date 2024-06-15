@@ -361,16 +361,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1718039015,
-        "narHash": "sha256-pWl7nh3DHFBpJFBycYgOpgBZCpWroqgAH/I1u9THH2U=",
-        "ref": "refs/heads/main",
-        "rev": "d9b556630de0130564508b73783dc3f38412e431",
-        "revCount": 320,
+        "lastModified": 1713739277,
+        "narHash": "sha256-W/0QGczuuJP1Od29IdwylAuz/6Ul84XF8ntwvI3AfVc=",
+        "rev": "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89",
+        "revCount": 256,
         "type": "git",
         "url": "https://github.com/horriblename/hyprgrass"
       },
       "original": {
-        "rev": "d9b556630de0130564508b73783dc3f38412e431",
+        "rev": "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89",
         "type": "git",
         "url": "https://github.com/horriblename/hyprgrass"
       }
@@ -378,24 +377,24 @@
     "hyprland": {
       "inputs": {
         "hyprcursor": "hyprcursor",
+        "hyprland-protocols": "hyprland-protocols",
         "hyprlang": "hyprlang",
-        "hyprwayland-scanner": "hyprwayland-scanner",
         "nixpkgs": "nixpkgs_3",
         "systems": "systems_3",
+        "wlroots": "wlroots",
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1718029386,
-        "narHash": "sha256-iX/l3UT8iXu8psu2UirFX11Yg2zYwpgzoXB32oM3N3U=",
-        "ref": "refs/heads/main",
-        "rev": "ea2501d4556f84d3de86a4ae2f4b22a474555b9f",
-        "revCount": 4794,
+        "lastModified": 1713283263,
+        "narHash": "sha256-7L5rqQRYH2iyyP5g3IdXJSlATfgnKhuYMf65E48MVKw=",
+        "rev": "fe7b748eb668136dd0558b7c8279bfcd7ab4d759",
+        "revCount": 4460,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
       },
       "original": {
-        "rev": "ea2501d4556f84d3de86a4ae2f4b22a474555b9f",
+        "rev": "fe7b748eb668136dd0558b7c8279bfcd7ab4d759",
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -413,16 +412,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1717837954,
-        "narHash": "sha256-chdXRv+JoiLQ9xwwq4q14X14em94VQaxk+tzkxRnQ5c=",
-        "ref": "refs/heads/main",
-        "rev": "8571aa9badf7db9c4911018a5611c038cc776256",
-        "revCount": 173,
+        "lastModified": 1712836056,
+        "narHash": "sha256-qf6yev9OlJuQv557ApLQ/5V8pQj0YOO9tyh5j3It1mY=",
+        "rev": "e9457e08ca3ff16dc5a815be62baf9e18b539197",
+        "revCount": 157,
         "type": "git",
         "url": "https://github.com/hyprwm/hyprland-plugins"
       },
       "original": {
-        "rev": "8571aa9badf7db9c4911018a5611c038cc776256",
+        "rev": "e9457e08ca3ff16dc5a815be62baf9e18b539197",
         "type": "git",
         "url": "https://github.com/hyprwm/hyprland-plugins"
       }
@@ -431,12 +429,10 @@
       "inputs": {
         "nixpkgs": [
           "hyprland",
-          "xdph",
           "nixpkgs"
         ],
         "systems": [
           "hyprland",
-          "xdph",
           "systems"
         ]
       },
@@ -476,31 +472,6 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprlang",
-        "type": "github"
-      }
-    },
-    "hyprwayland-scanner": {
-      "inputs": {
-        "nixpkgs": [
-          "hyprland",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprland",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1718119275,
-        "narHash": "sha256-nqDYXATNkyGXVmNMkT19fT4sjtSPBDS1LLOxa3Fueo4=",
-        "owner": "hyprwm",
-        "repo": "hyprwayland-scanner",
-        "rev": "1419520d5f7f38d35e05504da5c1b38212a38525",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprwayland-scanner",
         "type": "github"
       }
     },
@@ -810,17 +781,18 @@
         "nix-filter": "nix-filter"
       },
       "locked": {
-        "lastModified": 1718131642,
-        "narHash": "sha256-kSxes9PQWJjUSSWq2VAEFvUQtmxJ4bvmx8jEpeupGbk=",
-        "owner": "Duckonaut",
-        "repo": "split-monitor-workspaces",
-        "rev": "342de8a2cddf8143d7ce9c13c10613af8aa78c6e",
-        "type": "github"
+        "lastModified": 1713034087,
+        "narHash": "sha256-M9nGSYBieZNg/OgLqL7bX0S9Khlh4MFca0euGKwbuG4=",
+        "ref": "refs/heads/main",
+        "rev": "b0ee3953eaeba70f3fba7c4368987d727779826a",
+        "revCount": 48,
+        "type": "git",
+        "url": "https://github.com/Duckonaut/split-monitor-workspaces"
       },
       "original": {
-        "owner": "Duckonaut",
-        "repo": "split-monitor-workspaces",
-        "type": "github"
+        "rev": "b0ee3953eaeba70f3fba7c4368987d727779826a",
+        "type": "git",
+        "url": "https://github.com/Duckonaut/split-monitor-workspaces"
       }
     },
     "systems": {
@@ -956,9 +928,29 @@
         "type": "github"
       }
     },
+    "wlroots": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1713124002,
+        "narHash": "sha256-vPeZCY+sdiGsz4fl3AVVujfyZyQBz6+vZdkUE4hQ+HI=",
+        "owner": "hyprwm",
+        "repo": "wlroots-hyprland",
+        "rev": "611a4f24cd2384378f6e500253983107c6656c64",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "wlroots-hyprland",
+        "rev": "611a4f24cd2384378f6e500253983107c6656c64",
+        "type": "github"
+      }
+    },
     "xdph": {
       "inputs": {
-        "hyprland-protocols": "hyprland-protocols",
+        "hyprland-protocols": [
+          "hyprland",
+          "hyprland-protocols"
+        ],
         "hyprlang": [
           "hyprland",
           "hyprlang"

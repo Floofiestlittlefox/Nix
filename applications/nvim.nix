@@ -8,6 +8,7 @@
       typst-lsp
       ltex-ls
       javascript-typescript-langserver
+      typescript
     ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
@@ -57,6 +58,9 @@
           };
           nixd = {
             enable = true;
+          };
+          tsserver = {
+            enable = false;
           };
         };
       };
@@ -117,6 +121,12 @@
       }
       {
         mode = "n";
+        key = "<leader>ff";
+        options.silent = true;
+        action = "<cmd>Telescope buffers<CR>";
+      }
+      {
+        mode = "n";
         key = "<leader>ref";
         options.silent = true;
         action = "<cmd>Telescope bibtex<CR>";
@@ -141,8 +151,6 @@
     extraConfigLua = ''
       vim.g['tex_flavour'] = 'latex'
       require"telescope".load_extension("bibtex")
-      require("lspconfig")["javascript-typescript-language-server"].setup(coq.lsp_ensure_capabilities("javascript-typescript-language-server"))
-      
     '';
 
   };

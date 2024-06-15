@@ -17,6 +17,8 @@
 wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.default;
+                systemd.enable = true;
+                xwayland.enable = true;
 		extraConfig = ''
 		env=XDG_MENU_PREFIX,plasma-
 		input {
@@ -34,7 +36,6 @@ wayland.windowManager.hyprland = {
 			name = elan06fa:00-04f3:327e-touchpad
 			scroll_method=2fg
 			natural_scroll=true
-			
 			
 		}
 		gestures {
@@ -102,12 +103,11 @@ wayland.windowManager.hyprland = {
 			];
 			exec-once = [
 				"swaync &"
-                                "fcitx5 &"
+                                "fcitx5"
 				"swayosd-server &"
 				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
-				"squeekboard &"
-                                "wvkbd-mobintl"
+                                "wvkbd-mobintl -L 300"
                                 "ags"
 				
 			];
@@ -188,8 +188,8 @@ wayland.windowManager.hyprland = {
 				"$mod, mouse:272, movewindow"
 				"$mod, mouse:273, resizewindow"
 				"$mod ALT, mouse:272, resizewindow"
-                                ", longpress:2, movewindow"
-                                ", longpress:3, resizewindows"
+                                ", longpress:3, movewindow"
+                                ", longpress:4, resizewindows"
 
 			];
 		};

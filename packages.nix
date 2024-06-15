@@ -22,7 +22,7 @@
 			enable = true;
 			defaultEditor = true;
 		};
-		hyprland = {
+                hyprland = {
 			enable = true;
 			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 		};
@@ -184,6 +184,7 @@
 		wpgtk
 
 		xdotool
+                nix-search-cli
 
 		zip
 	];

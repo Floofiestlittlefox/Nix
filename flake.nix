@@ -8,19 +8,19 @@
 	hyprland = {
 		type = "git";
 		url="https://github.com/hyprwm/Hyprland";
-                rev="ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
+                rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
 		submodules = true;
    	};
 	hyprland-plugins = {
 		type = "git";
 		url = "https://github.com/hyprwm/hyprland-plugins";
-                rev = "8571aa9badf7db9c4911018a5611c038cc776256";
+                rev = "e9457e08ca3ff16dc5a815be62baf9e18b539197";
 		inputs.hyprland.follows = "hyprland";
 	};
 	hyprgrass = {
                 type = "git";
 		 url = "https://github.com/horriblename/hyprgrass";
-                 rev = "d9b556630de0130564508b73783dc3f38412e431";
+                 rev = "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
 		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
 	};
         #hyprspace = {
@@ -31,8 +31,10 @@
 	#	inputs.hyprland.follows = "hyprland";
 	#};
 	split-monitor-workspaces = {
-		url = "github:Duckonaut/split-monitor-workspaces";
-		inputs.hyprland.follows = "hyprland";
+          type = "git";
+          rev = "b0ee3953eaeba70f3fba7c4368987d727779826a";
+	  url = "https://github.com/Duckonaut/split-monitor-workspaces";
+	  inputs.hyprland.follows = "hyprland";
 	};
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
@@ -44,6 +46,7 @@
 	    url = "github:nix-community/nixvim";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
+        emacs-overlay.url = "github:nix-community/emacs-overlay/";
         nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
         flake-utils.url = "github:numtide/flake-utils";
 	nixos-hardware.url = "github:NixOS/nixos-hardware/master";

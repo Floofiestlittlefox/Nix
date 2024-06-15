@@ -9,6 +9,9 @@ in
 		udev = {
 			enable = true;
 			packages = [ pkgs.gnome.gnome-settings-daemon ];
+                        extraRules = ''
+                              ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+                            '';
 		};
 		printing = {
 			enable = true;
@@ -31,15 +34,17 @@ in
 		libinput.enable = true;
 		desktopManager.plasma6.enable = true;
 		displayManager = {
-			sddm.wayland.enable = true;
-			sddm.enable = true;
+			sddm.wayland.enable = false;
+			sddm.enable = false;
 			defaultSession = "hyprland";
 		};
 		xserver = {
-			enable = false;
-			displayManager.gdm.enable = false;
-                        desktopManager.gnome.enable = false;
-                        desktopManager.runXdgAutostartIfNone = false;
+			enable = true;
+                        displayManager.gdm = {
+                          enable = true;
+                        };
+                        desktopManager.gnome.enable = true;
+                        desktopManager.runXdgAutostartIfNone = true;
 		};
 		
 
@@ -83,6 +88,9 @@ in
 	};
         xdg.portal = {
 		enable = true;
+                extraPortals = [
+                  #pkgs.xdg-desktop-portal-gtk 
+                ];
 	};
 	security.polkit.enable = true;
 }

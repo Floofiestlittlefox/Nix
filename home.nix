@@ -41,14 +41,15 @@
 			name = "Vulpix";
 			size = 24;
 		};
-		iconTheme = {
-			name = "Breeze-Dark";
-		};
 		theme = {
 			package = pkgs.orchis-theme;
 			#package = (pkgs.callPackage ./breeze-gtk {});
 			name = "Orchis-Orange-Dark";
 		};
+                iconTheme = {
+                  name = "ePapirus-Dark";
+                  package = pkgs.epapirus-icon-theme;
+                };
 		font = {
 			name = "Sans";
 			size = 11;
