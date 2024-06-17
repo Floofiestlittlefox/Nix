@@ -10,7 +10,7 @@
 {
   # You can import other home-manager modules here
   imports = [
-    ./applications/
+    ./applications
   ];
 	  home = {
 	    username = "lachlan";

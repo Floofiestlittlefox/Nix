@@ -2,10 +2,13 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+
     home-manager= {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur.url = "github:nix-community/NUR";
 
 	hyprland = {
 		type = "git";
@@ -50,7 +53,7 @@
         walker.url = "github:abenz1267/walker";
 };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, ...}@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ...}@inputs: {
 
   	nixosConfigurations = {
 		lachlanLaptop = nixpkgs.lib.nixosSystem {
@@ -58,6 +61,7 @@
 		specialArgs = { inherit inputs; };
 		modules = [ 
 			./laptop
+                        nur.nixosModules.nur
 			nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 			home-manager.nixosModules.home-manager {
 				home-manager.useGlobalPkgs = true;
@@ -72,6 +76,7 @@
 			specialArgs = { inherit inputs; };
 			modules = [
 				./desktop
+                                nur.nixosModules.nur
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;

@@ -1,6 +1,6 @@
 {...}:
 {
-  import = [
+  imports = [
     ./windowManager
     ./shell
     ./editors

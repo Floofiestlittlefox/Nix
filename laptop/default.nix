@@ -18,9 +18,8 @@
     virtualisation.docker.enable = false;
     virtualisation.waydroid.enable = true;
     	imports = [
-          ./laptop/laptop-hardware-configuration.nix
+          ./laptop-hardware-configuration.nix
           ../configuration.nix
-          ../applications/
 	];
 	networking.hostName = "lachlanLaptop";
 	hardware.bluetooth = {

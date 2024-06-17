@@ -22,7 +22,7 @@
   programs.ags = {
     enable = true;
 
-    configDir = ./ags;
+    configDir = ../ags;
 
     extraPackages = with pkgs; [
       gtksourceview
