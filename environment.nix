@@ -8,6 +8,7 @@
 	CALIBRE_USE_SYSTEM_THEME = "1";
 
 	QT_QPA_PLATFORM = "wayland";
+        GDK_BACKEND     = "wayland";
 
         QT_IM_MODULE="fcitx";
         QT5_IM_MODULE="fcitx";

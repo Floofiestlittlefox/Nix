@@ -2,6 +2,7 @@
 {
   nixpkgs.overlays = [
     inputs.nixneovimplugins.overlays.default
+    inputs.emacs-overlay.overlays.default
   ];
 	programs = {
 		ssh.askPassword = "true";

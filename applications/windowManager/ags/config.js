@@ -4,7 +4,8 @@ const backlightFile='/sys/class/backlight/amdgpu_bl1/brightness'
 const batCapFile='/sys/class/power_supply/BAT0/capacity'
 const batStatFile='/sys/class/power_supply/BAT0/status'
 //let charge = Utils.readFile(batCapFile)
-let charge = Variable(Utils.readFile(batCapFile).replace(/^\s+|\s+$/g, ''))
+//let charge = Variable(Utils.readFile(batCapFile).replace(/^\s+|\s+$/g, ''))
+let charge = Variable('10')
 let batIcon = Variable('battery-level-'+(Math.round(charge.value/10)*10)+'-symbolic')
 
 
@@ -30,18 +31,24 @@ Utils.monitorFile(backlightFile, () => {
   brightness.setValue(Utils.readFile(backlightFile)/255)
 })
 
+Utils.subprocess(
+  ['bash', '-c', '/home/lachlan/.config/nix/applications/ags/bat.sh'],
+  (output) => batFunc(),
+  (output) => print(output),
+)
+batFunc()
 
-Utils.monitorFile(batCapFile, () => {
-  charge.setValue(Utils.readFile(batCapFile))
-  const status = Utils.readFile(batStatFile)
-  let chargePercent = Math.round(charge.value/10)*10
-  if (status == 'charging') {
-    batIcon.setValue('battery-level-'+chargePercent+'-charging-symbolic')
-  }
-  else {
-    batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
-  }
-})
+function batFunc() {
+    charge.setValue(Utils.readFile(batCapFile).replace(/^\s+|\s+$/g, ''))
+    const status = Utils.readFile(batStatFile)
+    let chargePercent = Math.round(charge.value/10)*10
+    if (status.value == 'charging') {
+      batIcon.setValue('battery-level-'+chargePercent+'-charging-symbolic')
+    }
+    else {
+      batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
+    }
+}
 
 const myCalendar = Widget.Window({
   name: 'calendar',

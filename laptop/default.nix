@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
     services = {
     	power-profiles-daemon.enable = false;
@@ -18,8 +18,9 @@
     virtualisation.docker.enable = false;
     virtualisation.waydroid.enable = true;
     	imports = [
-    		./laptop-hardware-configuration.nix
-
+          ./laptop/laptop-hardware-configuration.nix
+          ../configuration.nix
+          ../applications/
 	];
 	networking.hostName = "lachlanLaptop";
 	hardware.bluetooth = {

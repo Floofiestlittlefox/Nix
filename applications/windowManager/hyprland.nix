@@ -18,7 +18,7 @@ wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.default;
                 systemd.enable = true;
-                xwayland.enable = true;
+                xwayland.enable = false;
 		extraConfig = ''
 		env=XDG_MENU_PREFIX,plasma-
 		input {

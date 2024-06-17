@@ -2,8 +2,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager= {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
 	hyprland = {
 		type = "git";
@@ -23,29 +25,22 @@
                  rev = "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
 		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
 	};
-        #hyprspace = {
-	#	type = "git";
-	#	url = "https://github.com/KZDKM/Hyprspace";
-        #        #rev = "a44d834af279f233a269d065d2e14fe4101d6f41";
-	#	submodules = true;
-	#	inputs.hyprland.follows = "hyprland";
-	#};
 	split-monitor-workspaces = {
           type = "git";
           rev = "b0ee3953eaeba70f3fba7c4368987d727779826a";
 	  url = "https://github.com/Duckonaut/split-monitor-workspaces";
 	  inputs.hyprland.follows = "hyprland";
 	};
+
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
 	};
-	eww = {
-		url = "git+https://github.com/elkowar/eww.git";
-	};
+
 	nixvim = {
 	    url = "github:nix-community/nixvim";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
+
         emacs-overlay.url = "github:nix-community/emacs-overlay/";
         nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
         flake-utils.url = "github:numtide/flake-utils";
@@ -53,21 +48,16 @@
         ags.url = "github:Aylur/ags";
 
         walker.url = "github:abenz1267/walker";
-	#waypaper-engine = {
-	#	url = "path:./customPackages/waypaper-engine/";
-	#};
-
 };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nixos-hardware, nixneovimplugins, ...}@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, ...}@inputs: {
 
   	nixosConfigurations = {
 		lachlanLaptop = nixpkgs.lib.nixosSystem {
 		system = "x86_64-linux";
 		specialArgs = { inherit inputs; };
 		modules = [ 
-			./configuration.nix
-			./laptop/laptop.nix
+			./laptop
 			nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 			home-manager.nixosModules.home-manager {
 				home-manager.useGlobalPkgs = true;
@@ -81,8 +71,7 @@
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
-				./configuration.nix
-				./desktop/desktop.nix
+				./desktop
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
