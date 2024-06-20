@@ -1,0 +1,8 @@
+(undo-tree-save-format-version . 1)
+"4e915732074a966e5175fd7e1638ba5b0fa992f4"
+[nil nil nil nil (26226 9321 137114 872000) 0 nil]
+([nil nil ((#("  " 0 2 (fontified nil)) . -46) (undo-tree-id0 . -2) (undo-tree-id1 . -2) (48 . 49) (45 . 48) (44 . 45) (#(" " 0 1 (fontified nil)) . -43) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (44 . 45) (#(" " 0 1 (fontified t)) . -44) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 45 (40 . 45) (39 . 40) (32 . 39) (#("e" 0 1 (face nix-constant-face fontified t)) . -32) (undo-tree-id6 . -1) (undo-tree-id7 . -1) 33 (29 . 33) (25 . 29) (#("    " 0 4 (fontified nil)) . 24) (undo-tree-id8 . -4) (undo-tree-id9 . -4) (23 . 29) (20 . 23) (#("=" 0 1 (fontified t)) . -20) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (#(" " 0 1 (fontified t)) . -21) (undo-tree-id12 . -1) (undo-tree-id13 . -1) 22 (12 . 22) (9 . 12) (8 . 9) (7 . 8) (6 . 7) (4 . 6) (#("}" 0 1 (fontified t)) . -4) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (#("\"" 0 1 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t)) . -5) (undo-tree-id16 . -1) (undo-tree-id17 . -1) 6 (1 . 6) (t 26226 9171 401608 867000)) nil (26226 9321 137108 499000) 0 nil])
+([nil nil ((47 . 48)) nil (26226 9321 137034 379000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . 24) (undo-tree-id18 . -1) (t 26226 9321 145337 379000)) nil (26226 9322 778485 605000) 0 nil])
+nil

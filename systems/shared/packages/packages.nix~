@@ -1,0 +1,7 @@
+{pkgs, ...}:
+{
+  nixpkgs.overlays = [
+    inputs.nixneovimplugins.overlays.default
+    inputs.emacs-overlay.overlays.default
+    inputs.nur.overlay
+  ];

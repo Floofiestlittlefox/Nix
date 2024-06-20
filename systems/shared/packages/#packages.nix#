@@ -1,0 +1,32 @@
+{pkgs, ...}:
+{
+  nixpkgs.overlays = [
+    inputs.nixneovimplugins.overlays.default
+    inputs.emacs-overlay.overlays.default
+    inputs.nur.overlay
+  ];
+  environment.systemPackages = [
+    bat
+    btop
+    fd
+    cmake
+    fzf
+    gcc
+    gnumake
+    gtk-engine-murrine
+    htop
+    librsvg
+    networkmanagerapplet
+    ninja
+    polkit
+    python3
+    sassc
+    tree
+    wget
+    nix-search-cli
+    zip
+  ];
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
+}

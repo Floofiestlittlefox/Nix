@@ -1,0 +1,11 @@
+{pkgs, ...}:
+{
+  home.packages = with pkgs.kdePackages; [
+    breeze
+    systemsettings
+  ];
+  qt = {
+    enable = true;
+    platformTheme.name = "kde";
+  };
+}

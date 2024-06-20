@@ -60,8 +60,8 @@
 		system = "x86_64-linux";
 		specialArgs = { inherit inputs; };
 		modules = [ 
-			./systems/laptop
-                        nur.nixosModules.nur
+			./laptop
+      nur.nixosModules.nur
 			nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 			home-manager.nixosModules.home-manager {
 				home-manager.useGlobalPkgs = true;
@@ -75,8 +75,8 @@
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
-				./systems/desktop
-                                nur.nixosModules.nur
+				./desktop
+        nur.nixosModules.nur
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;

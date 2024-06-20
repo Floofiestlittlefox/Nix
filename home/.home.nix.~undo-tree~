@@ -1,0 +1,146 @@
+(undo-tree-save-format-version . 1)
+"de920c8b766da6b6ad708e5ae6511f4beec4a406"
+[nil nil nil nil (26225 26389 878347 798000) 0 nil]
+([nil nil ((#("m" 0 1 (fontified t)) . -291) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (#("e" 0 1 (fontified t)) . -292) (undo-tree-id13 . -1) (undo-tree-id14 . -1) 293 (291 . 293) (284 . 291) (t 26223 60939 723332 643000) 282) nil (26225 26389 878344 1000) 0 nil])
+([nil nil ((#("      
+" 0 6 (fontified t) 6 7 (fontified t)) . 285) (undo-tree-id0 . -5) (undo-tree-id1 . -6) (undo-tree-id2 . -6) (undo-tree-id3 . 1) (undo-tree-id4 . -5) (undo-tree-id5 . -5) (undo-tree-id6 . -5) (undo-tree-id7 . -5) (undo-tree-id8 . -5) (undo-tree-id9 . -7) (undo-tree-id10 . -6) 290) nil (26225 26389 878327 681000) 0 nil])
+([nil nil ((#("        #i18n.inputMethod = {
+        #    enabled = \"fcitx5\";
+" 0 8 (fontified t) 8 30 (face font-lock-comment-face fontified t) 30 38 (fontified t) 38 53 (face font-lock-comment-face fontified t) 53 54 (face font-lock-comment-face fontified t nix-string-type 34 syntax-table (15)) 54 60 (face font-lock-comment-face fontified t) 60 61 (face font-lock-comment-face fontified t nix-string-type 34 syntax-table (15)) 61 63 (face font-lock-comment-face fontified t)) . 493) (undo-tree-id43 . -14) (undo-tree-id44 . -62) (undo-tree-id45 . -14) 507 (t 26225 26389 887399 972000)) nil (26225 26569 481416 69000) 0 nil])
+([nil nil ((#("        #    fcitx5.addons = with pkgs; [
+        #      fcitx5-mozc
+" 0 8 (fontified t) 8 41 (face font-lock-comment-face fontified t) 41 42 (face font-lock-comment-face fontified t) 42 50 (fontified t) 50 69 (face font-lock-comment-face fontified t)) . 493) (undo-tree-id41 . -68) (undo-tree-id42 . -14) 507) nil (26225 26569 481411 641000) 0 nil])
+([nil nil ((#("        #      fcitx5-gtk
+" 0 8 (fontified t) 8 25 (face font-lock-comment-face fontified t) 25 26 (face font-lock-comment-face fontified t)) . 493) (undo-tree-id39 . -25) (undo-tree-id40 . -14) 507) nil (26225 26569 481408 425000) 0 nil])
+([nil nil ((#("        #    ];
+" 0 8 (fontified t) 8 15 (face font-lock-comment-face fontified t) 15 16 (face font-lock-comment-face fontified t)) . 493) (undo-tree-id37 . -15) (undo-tree-id38 . -14) 507) nil (26225 26569 481405 98000) 0 nil])
+([nil nil ((#("        #  };
+" 0 8 (fontified t) 8 13 (face font-lock-comment-face fontified t) 13 14 (face font-lock-comment-face fontified t)) . 493) (undo-tree-id35 . -13) (undo-tree-id36 . -12) 505) nil (26225 26569 481401 371000) 0 nil])
+([nil nil ((#("                #style = {
+		#	name = \"kvantum\";
+" 0 16 (fontified t) 16 27 (face font-lock-comment-face fontified t) 27 29 (fontified t) 29 38 (face font-lock-comment-face fontified t) 38 39 (face font-lock-comment-face fontified t nix-string-type 34 syntax-table (15)) 39 46 (face font-lock-comment-face fontified t) 46 47 (face font-lock-comment-face fontified t nix-string-type 34 syntax-table (15)) 47 49 (face font-lock-comment-face fontified t)) . 1266) (undo-tree-id24 . -20) (undo-tree-id25 . -48) (undo-tree-id26 . -20) (undo-tree-id27 . -20) (undo-tree-id28 . -20) (undo-tree-id29 . -20) (undo-tree-id30 . -20) (undo-tree-id31 . -20) (undo-tree-id32 . -20) (undo-tree-id33 . -20) (undo-tree-id34 . -49) 1286) nil (26225 26569 481395 611000) 0 nil])
+([nil nil ((#("		#};
+" 0 2 (fontified t) 2 5 (face font-lock-comment-face fontified t) 5 6 (face font-lock-comment-face fontified t)) . 1266) (undo-tree-id15 . -5) (undo-tree-id16 . -4) (undo-tree-id17 . -5) (undo-tree-id18 . -4) (undo-tree-id19 . -4) (undo-tree-id20 . -4) (undo-tree-id21 . -4) (undo-tree-id22 . -4) (undo-tree-id23 . -6) 1270) nil (26225 26569 481367 668000) 0 nil])
+([nil nil ((#("  	gtk = {
+		enable = true;
+" 0 3 (fontified t) 3 6 (face nix-attribute-face fontified t) 6 10 (fontified t) 10 11 (fontified t) 11 13 (fontified t) 13 19 (face nix-attribute-face fontified t) 19 22 (fontified t) 22 26 (face nix-builtin-face fontified t) 26 28 (fontified t)) . 493) (undo-tree-id86 . -10) (undo-tree-id87 . -27) (undo-tree-id88 . -9) 502 (t 26225 26569 489976 954000)) nil (26225 26680 160753 631000) 0 nil])
+([nil nil ((#("		cursorTheme = {
+			name = \"Vulpix\";
+" 0 2 (fontified t) 2 13 (face nix-attribute-face fontified t) 13 17 (fontified t) 17 18 (fontified t) 18 21 (fontified t) 21 25 (face nix-attribute-face fontified t) 25 28 (fontified t) 28 29 (nix-string-type 34 syntax-table (15) face font-lock-string-face fontified t) 29 35 (face font-lock-string-face fontified t) 35 36 (nix-string-type 34 syntax-table (15) face font-lock-string-face fontified t) 36 38 (fontified t)) . 493) (undo-tree-id84 . -37) (undo-tree-id85 . -8) 501) nil (26225 26680 160748 953000) 0 nil])
+([nil nil ((#("			size = 24;
+		};
+" 0 3 (fontified t) 3 7 (face nix-attribute-face fontified t) 7 13 (fontified t) 13 14 (fontified t) 14 19 (fontified t)) . 493) (undo-tree-id82 . -18) (undo-tree-id83 . -7) 500) nil (26225 26680 160746 47000) 0 nil])
+([nil nil ((#("		theme = {
+			package = pkgs.orchis-theme;
+" 0 2 (fontified t) 2 7 (face nix-attribute-face fontified t) 7 11 (fontified t) 11 12 (fontified t) 12 15 (fontified t) 15 22 (face nix-attribute-face fontified t) 22 44 (fontified t)) . 493) (undo-tree-id80 . -43) (undo-tree-id81 . -8) 501) nil (26225 26680 160742 901000) 0 nil])
+([nil nil ((#("			#package = (pkgs.callPackage ./breeze-gtk {});
+			name = \"Orchis-Orange-Dark\";
+" 0 3 (fontified t) 3 49 (face font-lock-comment-face fontified t) 49 50 (face font-lock-comment-face fontified t) 50 53 (fontified t) 53 57 (face nix-attribute-face fontified t) 57 60 (fontified t) 60 61 (nix-string-type 34 syntax-table (15) face font-lock-string-face fontified t) 61 79 (face font-lock-string-face fontified t) 79 80 (nix-string-type 34 syntax-table (15) face font-lock-string-face fontified t) 80 82 (fontified t)) . 493) (undo-tree-id78 . -81) (undo-tree-id79 . -7) 500) nil (26225 26680 160739 465000) 0 nil])
+([nil nil ((#("		};
+                iconTheme = {
+" 0 4 (fontified t) 4 5 (fontified t) 5 21 (fontified t) 21 30 (face nix-attribute-face fontified t) 30 35 (fontified t)) . 493) (undo-tree-id76 . -34) (undo-tree-id77 . -3) 496) nil (26225 26680 160735 547000) 0 nil])
+([nil nil ((#("                  name = \"ePapirus-Dark\";
+                  package = pkgs.epapirus-icon-theme;
+" 0 18 (fontified t) 18 22 (face nix-attribute-face fontified t) 22 25 (fontified t) 25 26 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 26 39 (face font-lock-string-face fontified t) 39 40 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 40 41 (fontified t) 41 42 (fontified t) 42 60 (fontified t) 60 67 (face nix-attribute-face fontified t) 67 96 (fontified t)) . 493) (undo-tree-id74 . -95) (undo-tree-id75 . -5) 498) nil (26225 26680 160732 922000) 0 nil])
+([nil nil ((#("                };
+		font = {
+" 0 18 (fontified t) 18 19 (fontified t) 19 21 (fontified t) 21 25 (face nix-attribute-face fontified t) 25 30 (fontified t)) . 493) (undo-tree-id72 . -29) (undo-tree-id73 . -5) 498) nil (26225 26680 160729 646000) 0 nil])
+([nil nil ((#("			name = \"Sans\";
+			size = 11;
+" 0 3 (fontified t) 3 7 (face nix-attribute-face fontified t) 7 10 (fontified t) 10 11 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 11 15 (face font-lock-string-face fontified t) 15 16 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 16 17 (fontified t) 17 18 (fontified t) 18 21 (fontified t) 21 25 (face nix-attribute-face fontified t) 25 32 (fontified t)) . 493) (undo-tree-id70 . -31) (undo-tree-id71 . -3) 496) nil (26225 26680 160726 741000) 0 nil])
+([nil nil ((#("		};
+                gtk3.extraConfig = {
+" 0 4 (fontified t) 4 5 (fontified t) 5 21 (fontified t) 21 37 (face nix-attribute-face fontified t) 37 42 (fontified t)) . 493) (undo-tree-id64 . -41) (undo-tree-id65 . -21) (undo-tree-id66 . -21) (undo-tree-id67 . -21) (undo-tree-id68 . -21) (undo-tree-id69 . -3) 496) nil (26225 26680 160722 964000) 0 nil])
+([nil nil ((#("                  gtk-im-module=\"fcitx\";
+                };
+" 0 18 (fontified t) 18 31 (face nix-attribute-face fontified t) 31 32 (fontified t) 32 33 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 33 38 (face font-lock-string-face fontified t) 38 39 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 39 40 (fontified t) 40 41 (fontified t) 41 60 (fontified t)) . 493) (undo-tree-id62 . -59) (undo-tree-id63 . -5) 498) nil (26225 26680 160709 869000) 0 nil])
+([nil nil ((#("                gtk2.extraConfig = ''
+                  gtk-im-module=fcitx
+" 0 16 (fontified t) 16 32 (face nix-attribute-face fontified t) 32 35 (fontified t) 35 36 (face font-lock-string-face nix-string-type 39 syntax-table (15) fontified t) 36 37 (face font-lock-string-face fontified t) 37 38 (face font-lock-string-face fontified t) 38 76 (face font-lock-string-face fontified t)) . 493) (undo-tree-id60 . -75) (undo-tree-id61 . -5) 498) nil (26225 26680 160706 863000) 0 nil])
+([nil nil ((#("                '';
+                gtk4.extraConfig = { 
+" 0 16 (fontified t) 16 17 (face font-lock-string-face nix-string-type 39 syntax-table (15) fontified t) 17 18 (face font-lock-string-face fontified t) 18 19 (face font-lock-string-face fontified t) 19 20 (face font-lock-string-face fontified t) 20 36 (fontified t) 36 52 (face nix-attribute-face fontified t) 52 58 (fontified t)) . 493) (undo-tree-id58 . -57) (undo-tree-id59 . -5) 498) nil (26225 26680 160703 517000) 0 nil])
+([nil nil ((#("                  gtk-im-module=\"fcitx\";
+                };
+" 0 18 (fontified t) 18 31 (face nix-attribute-face fontified t) 31 32 (fontified t) 32 33 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 33 38 (face font-lock-string-face fontified t) 38 39 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 39 40 (fontified t) 40 41 (fontified t) 41 60 (fontified t)) . 493) (undo-tree-id53 . -59) (undo-tree-id54 . 1) (undo-tree-id55 . -58) (undo-tree-id56 . -58) (undo-tree-id57 . -5) 498) nil (26225 26680 160699 439000) 0 nil])
+([nil nil ((#("	};
+" 0 3 (fontified t) 3 4 (fontified t)) . 493) (undo-tree-id46 . -3) (undo-tree-id47 . 4) (undo-tree-id48 . -1) (undo-tree-id49 . -1) (undo-tree-id50 . -1) (undo-tree-id51 . -1) (undo-tree-id52 . -4) 494) nil (26225 26680 160685 633000) 0 nil])
+([nil nil ((494 . 495) (t 26225 26680 170165 989000)) nil (26225 26683 970142 615000) 0 nil])
+([nil nil ((#("f" 0 1 (face nix-attribute-face fontified t)) . 494) (undo-tree-id89 . -1) (undo-tree-id90 . -1) (undo-tree-id91 . -1) (undo-tree-id92 . -1)) nil (26225 26683 970133 578000) 0 nil])
+([nil nil ((#("	    pointerCursor = {
+		gtk.enable = true;
+" 0 5 (fontified t) 5 18 (face nix-attribute-face fontified t) 18 25 (fontified t) 25 35 (face nix-attribute-face fontified t) 35 38 (fontified t) 38 42 (face nix-builtin-face fontified t) 42 44 (fontified t)) . 350) (undo-tree-id152 . -37) (undo-tree-id153 . -43) (undo-tree-id154 . -15) 365 (t 26225 26683 979209 333000)) nil (26226 8184 314344 362000) 0 nil])
+([nil nil ((#("		name = \"Vulpix\";
+" 0 2 (fontified t) 2 6 (face nix-attribute-face fontified t) 6 9 (fontified t) 9 10 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 10 16 (face font-lock-string-face fontified t) 16 17 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 17 18 (fontified t) 18 19 (fontified t)) . 350) (undo-tree-id150 . -18) (undo-tree-id151 . -14) 364) nil (26226 8184 314337 900000) 0 nil])
+([nil nil ((#("		package = inputs.vulpix.packages.${pkgs.system}.vulpix;
+" 0 2 (fontified t) 2 9 (face nix-attribute-face fontified t) 9 57 (fontified t) 57 58 (fontified t)) . 350) (undo-tree-id148 . -57) (undo-tree-id149 . -14) 364) nil (26226 8184 314335 24000) 0 nil])
+([nil nil ((#("		size = 24;
+" 0 2 (fontified t) 2 6 (face nix-attribute-face fontified t) 6 12 (fontified t) 12 13 (fontified t)) . 350) (undo-tree-id146 . -12) (undo-tree-id147 . -11) 361) nil (26226 8184 314331 548000) 0 nil])
+([nil nil ((354 . 359) 353) nil (26226 8184 314328 773000) 0 nil])
+([nil nil ((#("	qt = {
+		enable = true;
+" 0 1 (fontified t) 1 3 (face nix-attribute-face fontified t) 3 7 (fontified t) 7 8 (fontified t) 8 10 (fontified t) 10 16 (face nix-attribute-face fontified t) 16 19 (fontified t) 19 23 (face nix-builtin-face fontified t) 23 25 (fontified t)) . 364) (undo-tree-id141 . -7) (undo-tree-id142 . -24) (undo-tree-id143 . -1) (undo-tree-id144 . -1) (undo-tree-id145 . -6) 370) nil (26226 8184 314327 771000) 0 nil])
+([nil nil ((#("                platformTheme.name = \"kde\";
+" 0 16 (fontified t) 16 34 (face nix-attribute-face fontified t) 34 37 (fontified t) 37 38 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 38 41 (face font-lock-string-face fontified t) 41 42 (face font-lock-string-face nix-string-type 34 syntax-table (15) fontified t) 42 43 (fontified t) 43 44 (fontified t)) . 364) (undo-tree-id139 . -43) (undo-tree-id140 . -7) 371) nil (26226 8184 314322 0) 0 nil])
+([nil nil ((#("	};
+" 0 3 (fontified t) 3 4 (fontified t)) . 364) (undo-tree-id137 . -3) (undo-tree-id138 . -2) 366) nil (26226 8184 314319 365000) 0 nil])
+([nil nil ((#("  # Add stuff for your user as you see fit:
+  # programs.neovim.enable = true;
+" 0 2 (fontified t) 2 44 (face font-lock-comment-face fontified t) 44 46 (fontified t) 46 79 (face font-lock-comment-face fontified t)) . 370) (undo-tree-id134 . -78) (undo-tree-id135 . -78) (undo-tree-id136 . -33) 403) nil (26226 8184 314316 189000) 0 nil])
+([nil nil ((#("  # home.packages = with pkgs; [ steam ];
+
+" 0 2 (fontified t) 2 41 (face font-lock-comment-face fontified t) 41 42 (face font-lock-comment-face fontified t) 42 43 (fontified t)) . 370) (undo-tree-id132 . -42) (undo-tree-id133 . -33) 403) nil (26226 8184 314310 348000) 0 nil])
+([nil nil ((#("  # Enable home-manager and git
+" 0 2 (fontified t) 2 31 (face font-lock-comment-face fontified t) 31 32 (face font-lock-comment-face fontified t)) . 370) (undo-tree-id130 . -31) (undo-tree-id131 . -30) 400) nil (26226 8184 311834 419000) 0 nil])
+([nil nil ((#("#  programs.papis = {
+#  	enable = true;
+" 0 3 (face font-lock-comment-delimiter-face fontified t) 3 22 (face font-lock-comment-face fontified t) 22 25 (face font-lock-comment-delimiter-face fontified t) 25 41 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id128 . -40) (undo-tree-id129 . -20) 459) nil (26226 8184 311832 14000) 0 nil])
+([nil nil ((#("#	libraries = {
+#		Default = {
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 2 (face font-lock-comment-face fontified t) 2 15 (face font-lock-comment-face fontified t) 15 16 (face font-lock-comment-face fontified t) 16 17 (face font-lock-comment-delimiter-face fontified t) 17 28 (face font-lock-comment-face fontified t) 28 29 (face font-lock-comment-face fontified t) 29 31 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id126 . -30) (undo-tree-id127 . -14) 453) nil (26226 8184 311829 289000) 0 nil])
+([nil nil ((#("#			isDefault = true;
+#			name = \"Default\";
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 21 (face font-lock-comment-face fontified t) 21 22 (face font-lock-comment-face fontified t) 22 23 (face font-lock-comment-delimiter-face fontified t) 23 33 (face font-lock-comment-face fontified t) 33 34 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 34 41 (face font-lock-comment-face fontified t) 41 42 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 42 44 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id124 . -43) (undo-tree-id125 . -12) 451) nil (26226 8184 311826 955000) 0 nil])
+([nil nil ((#("#			settings = {
+#				dir = \"~/assignments/Documents/Papers\";
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 16 (face font-lock-comment-face fontified t) 16 17 (face font-lock-comment-face fontified t) 17 18 (face font-lock-comment-delimiter-face fontified t) 18 28 (face font-lock-comment-face fontified t) 28 29 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 29 59 (face font-lock-comment-face fontified t) 59 60 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 60 62 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id122 . -61) (undo-tree-id123 . -12) 451) nil (26226 8184 311824 470000) 0 nil])
+([nil nil ((#("#			};
+#		};
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 6 (face font-lock-comment-face fontified t) 6 7 (face font-lock-comment-face fontified t) 7 8 (face font-lock-comment-delimiter-face fontified t) 8 13 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id120 . -12) (undo-tree-id121 . -5) 444) nil (26226 8184 311821 935000) 0 nil])
+([nil nil ((#("#	};
+#	settings = {
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 4 (face font-lock-comment-face fontified t) 4 5 (face font-lock-comment-face fontified t) 5 6 (face font-lock-comment-delimiter-face fontified t) 6 20 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id118 . -19) (undo-tree-id119 . -3) 442) nil (26226 8184 311818 960000) 0 nil])
+([nil nil ((#("#		editor = \"nvim\";
+#		file-browser = \"ranger\";
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 12 (face font-lock-comment-face fontified t) 12 13 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 13 17 (face font-lock-comment-face fontified t) 17 18 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 18 19 (face font-lock-comment-face fontified t) 19 20 (face font-lock-comment-face fontified t) 20 21 (face font-lock-comment-delimiter-face fontified t) 21 38 (face font-lock-comment-face fontified t) 38 39 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 39 45 (face font-lock-comment-face fontified t) 45 46 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 46 48 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id116 . -47) (undo-tree-id117 . -3) 442) nil (26226 8184 311816 365000) 0 nil])
+([nil nil ((#("#		match-format = \"{doc[tags]}{doc.subfolder}{doc[title]}{doc[author]}{doc[year]}\";
+#		header-format = \"<red>{doc.html_escape[title]}</red>
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 18 (face font-lock-comment-face fontified t) 18 19 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 19 81 (face font-lock-comment-face fontified t) 81 82 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 82 83 (face font-lock-comment-face fontified t) 83 84 (face font-lock-comment-face fontified t) 84 85 (face font-lock-comment-delimiter-face fontified t) 85 96 (face font-lock-comment-face fontified t) 96 103 (face font-lock-comment-face fontified t) 103 104 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 104 140 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id114 . -139) (undo-tree-id115 . -3) 442) nil (26226 8184 311813 981000) 0 nil])
+([nil nil ((#("#  <span color='#ff00ff'>  {doc.html_escape[author]}</span>
+#  <yellow>   ({doc.html_escape[year]})</yellow>\";
+" 0 3 (face font-lock-comment-delimiter-face fontified t) 3 9 (face font-lock-comment-face fontified t) 9 51 (face font-lock-comment-face fontified t) 51 59 (face font-lock-comment-face fontified t) 59 60 (face font-lock-comment-face fontified t) 60 63 (face font-lock-comment-delimiter-face fontified t) 63 108 (face font-lock-comment-face fontified t) 108 109 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 109 111 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id112 . -110) (undo-tree-id113 . -4) 443) nil (26226 8184 311810 274000) 0 nil])
+([nil nil ((#("#		add-folder-name = \"{doc[title]} {doc[author]}\";
+#		add-file-name = \"{doc[title]} {doc[author]}\";
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 21 (face font-lock-comment-face fontified t) 21 22 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 22 48 (face font-lock-comment-face fontified t) 48 49 (face font-lock-comment-face nix-string-type 34 syntax-table (15) fontified t) 49 50 (face font-lock-comment-face fontified t) 50 51 (face font-lock-comment-face fontified t) 51 52 (face font-lock-comment-delimiter-face fontified t) 52 70 (face font-lock-comment-face fontified t) 70 71 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 71 97 (face font-lock-comment-face fontified t) 97 98 (nix-string-type 34 syntax-table (15) face font-lock-comment-face fontified t) 98 100 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id110 . -99) (undo-tree-id111 . -3) 442) nil (26226 8184 311807 378000) 0 nil])
+([nil nil ((#("#	
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 2 (face font-lock-comment-face fontified t) 2 3 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id108 . -2) (undo-tree-id109 . -1) 440) nil (26226 8184 311801 708000) 0 nil])
+([nil nil ((#("#	};
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 4 (face font-lock-comment-face fontified t) 4 5 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id106 . -4) (undo-tree-id107 . -1) 440) nil (26226 8184 311799 133000) 0 nil])
+([nil nil ((#("#};
+" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 3 (face font-lock-comment-face fontified t) 3 4 (face font-lock-comment-face fontified t)) . 439) (undo-tree-id104 . -3) (undo-tree-id105 . -1) 440) nil (26226 8184 311796 468000) 0 nil])
+([nil nil ((#("	
+" 0 1 (fontified t) 1 2 (fontified t)) . 439) (undo-tree-id103 . -1)) nil (26226 8184 311793 783000) 0 nil])
+([nil nil ((#("  
+" 0 2 (fontified t) 2 3 (fontified t)) . 439) (undo-tree-id102 . -2)) nil (26226 8184 311791 749000) 0 nil])
+([nil nil ((#("
+
+" 0 1 (fontified t) 1 2 (fontified t)) . 364) (undo-tree-id101 . -1)) nil (26226 8184 311788 503000) 0 nil])
+([nil nil ((#("
+	
+" 0 1 (fontified t) 1 3 (fontified t)) . 364) (undo-tree-id99 . -2) (undo-tree-id100 . -3)) nil (26226 8184 311785 477000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 364) (undo-tree-id97 . -1) (undo-tree-id98 . -1)) nil (26226 8184 311775 849000) 0 nil])
+([nil nil ((#("    
+" 0 4 (fontified t) 4 5 (fontified t)) . 355) (undo-tree-id95 . -4) (undo-tree-id96 . -5)) nil (26226 8184 311770 600000) 0 nil])
+([nil current ((#("." 0 1 (face nix-constant-face fontified t)) . -280) (undo-tree-id93 . -1) (undo-tree-id94 . -1) 281 (272 . 281) (267 . 272) 252) nil (26226 8184 311758 888000) 0 nil])
+nil
