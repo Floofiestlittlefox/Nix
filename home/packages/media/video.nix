@@ -5,4 +5,5 @@
 		mpv
 		obs-studio
 		yt-dlp
-  ]
+  ];
+}

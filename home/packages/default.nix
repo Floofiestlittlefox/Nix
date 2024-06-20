@@ -6,8 +6,7 @@
     ./japanese
     ./latex
     ./media
-    ./school
     ./shell
-    ./kodi.nix
+    ./school
   ];
 }

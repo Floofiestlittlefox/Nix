@@ -1,7 +1,7 @@
 {pkgs, lib, config, ...}:
 
 {
-	home.packages = [
+	home.packages = with pkgs; [
 		lsd
 	];
 	programs.zoxide = {
