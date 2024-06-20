@@ -12,9 +12,9 @@
 		nwg-drawer
 		squeekboard
 		libnotify
-    kdePackages.polkit-kde-agent-1
-    (callPackage ./wvkbd-n7n {})
-    (callPackage ./iio-hyprland {})
+            kdePackages.polkit-kde-agent-1
+            (callPackage ./wvkbd-n7n {})
+            (callPackage ./iio-hyprland {})
 	];
 wayland.windowManager.hyprland = {
 		enable = true;
