@@ -1,5 +1,9 @@
 {pkgs, inputs, ...}:
 {
+  imports = [
+    ./fonts.nix
+  ];
+  programs.zsh.enable = true;
   nixpkgs.overlays = [
     inputs.nixneovimplugins.overlays.default
     inputs.emacs-overlay.overlays.default
