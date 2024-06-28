@@ -2,6 +2,7 @@
 {
   imports = [
     ./fonts.nix
+    ./games.nix
   ];
   programs.zsh.enable = true;
   nixpkgs.overlays = [

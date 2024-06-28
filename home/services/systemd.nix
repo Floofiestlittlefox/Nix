@@ -7,11 +7,15 @@ let
     startServices = "sd-switch";
     services = {
       lxqt-policykit-agent = {
-        description = "polkit-lxqt-agent";
-        wantedBy = ["graphical-session.target"];
-        wants = [ "graphical-session.target" ];
-        after = [ "graphical-session.target" ];
-        serviceConfig = {
+        Unit = {
+          Description = "polkit-lxqt-agent";
+        };
+        Install = {
+          WantedBy = ["graphical-session.target"];
+          Wants = [ "graphical-session.target" ];
+          After = [ "graphical-session.target" ];
+        };
+        Service = {
           Type = "simple";
           ExecStart = "${pkgs.lxqt.lxqt-policykit}/libexec/lxqt-policykit-agent";
           Restart = "on-failure";
@@ -20,16 +24,17 @@ let
         };
       };
       appimage-menu-updater = {
-        enable = true;
-        description = "Appimage Menu Updater";
-        unitConfig = {
-				  Type = "simple";
-			  };
-			  serviceConfig = {
-				  ExecStart = "/bin/sh -c 'HOME=%h ${appimage-menu-updater}'";
-			  };
-			  wantedBy = [ "default.target" ];
-		  };
-	  };
+        Unit = {
+          Description = "Appimage Menu Updater";
+	  Type = "simple";
+        };
+        Service = {
+          ExecStart = "/bin/sh -c 'HOME=%h ${appimage-menu-updater}'";
+	};
+        Install = {
+	  WantedBy = [ "default.target" ];
+        };
+      };
+    };
   };
- }
+}

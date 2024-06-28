@@ -13,7 +13,7 @@
     };
     iconTheme = {
       name = "ePapirus-Dark";
-      package = pkgs.epapiurs-icon-theme;
+      package = pkgs.epapirus-icon-theme;
     };
     font = {
       name = "Sans";

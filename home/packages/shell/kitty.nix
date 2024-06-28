@@ -3,8 +3,8 @@
   programs.kitty = {
     enable = true;
     settings = {
-      opacity = "0.9";
-      confirm_os_window_close = "1";
+      set_opacity = "0.9";
+      confirm_os_window_close = "0";
     };
     shellIntegration.enableZshIntegration = true;
   };

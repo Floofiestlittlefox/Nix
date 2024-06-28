@@ -1,4 +1,4 @@
-{lib, ...}:
+{lib, pkgs, ...}:
 {
   services = {
     samba = {
@@ -52,21 +52,13 @@
       package = lib.mkForce pkgs.gnome3.gvfs;
     };
 
-    networking = {
-      networkmanager.enable = true;
-      firewall= {
-        enable = true;
-        allowPing = true;
-        allowedTCPPorts = lib.mkDefault [ 22 ];
-      };
-    };
     openssh = {
       enable = true;
       ports = [ 22 ];
       settings = {
         PasswordAuthentication = true;
         AllowUsers = null;
-        useDns = true;
+        UseDns = true;
         X11Forwarding = true;
         PermitRootLogin = "prohibit-password";
       };
@@ -81,7 +73,15 @@
       nssmdns4 = true;
       openFirewall = true;
     };
-    mtr-exporter.enable = true;
   };
+  networking = {
+      networkmanager.enable = true;
+      firewall= {
+        enable = true;
+        allowPing = true;
+        allowedTCPPorts = lib.mkDefault [ 22 ];
+      };
+    };
+
   programs.mtr.enable = true;
 }

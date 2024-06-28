@@ -2,11 +2,11 @@
 {
   programs.texlive = {
     enable = true;
-    packageSet = pkgs.texlive.combined.scheme-full;
+    packageSet = pkgs.texlive;
   };
 
   home.packages = with pkgs; [
     texlab
-		pandoc
+    pandoc
   ];
 }

@@ -3,9 +3,15 @@ import { Media } from "./Media.js"
 const backlightFile='/sys/class/backlight/amdgpu_bl1/brightness'
 const batCapFile='/sys/class/power_supply/BAT0/capacity'
 const batStatFile='/sys/class/power_supply/BAT0/status'
-let charge = Variable('10')
-let status = Variable('Charging')
-let batIcon = Variable('battery-level-'+(Math.round(charge.value/10)*10)+'-symbolic')
+
+let volume = Variable('')
+let volIcon = Variable('')
+volFunc('change')
+
+let status = Variable('')
+let charge = Variable('')
+let batIcon = Variable('')
+batFunc()
 
 
 let date = Variable('', {
@@ -13,50 +19,93 @@ let date = Variable('', {
 	})
 
 
-let brightness = Variable(Utils.readFile(backlightFile)/255)
-
-let volume = Variable(Math.round(Utils.execAsync(['pactl', 'get-sink-volume', '@DEFAULT_SINK@'])))
-
-function buttonExec(script) {
-  Utils.execAsync([
-    'bash', '-c', script
-  ]);
-}
-
-function brightnessUpd(value) {
-  value = value.toString()
-  Utils.execAsync(['brightnessctl','-q','s',value+'%'])
-}
-
-function volUpd(value) {
-  value = value.toString()
-  Utils.execAsync(['pactl','s',value+'%'])
-}
-
+let brightness = Variable()
+let brightnessIcon = Variable('')
+brightnessFunc()
 
 Utils.monitorFile(backlightFile, () => {
-  brightness.setValue(Utils.readFile(backlightFile)/255)
+  brightnessFunc()
 })
 
 Utils.subprocess(
   ['fswatch', '/sys/class/power_supply/BAT0/energy_now'],
-  (output) => batFunc(),
+  (output) => (batFunc())
 )
-batFunc()
+
+Utils.subprocess(
+  ['bash', '-c', 'pactl subscribe'],
+  (output) => volFunc(output.match('change')), 
+  (err) => print(err),
+)
+
+function brightnessUpd(value) {
+  value = value.toString(),
+  Utils.execAsync(['brightnessctl','-q','s',value+'%'])
+}
+
+function brightnessFunc() {
+    brightness.setValue(Utils.readFile(backlightFile)/255)
+    brightnessIcon.setValue('brightness-'+(Math.round(brightness.value*2).toString().replace('0','low').replace('1','medium').replace('2','high'))+'-symbolic')
+}
+
+function volUpd(value) {
+  value = value.toString(),
+  Utils.execAsync(['pactl','set-sink-volume', '@DEFAULT_SINK@', value+'%'])
+}
+
+
+function volFunc(i) {
+  if (i == 'change') {
+    Utils.execAsync(['bash', '-c', './vol.sh'])
+      .then(
+	out => {
+	  volume.setValue(
+	    out.toString().replace(/[^0-9].*/,'')/100
+	  ); 
+	  if (out.toString().replace(/(.*)[^a-z]/, '') == 'yes') {
+	    volIcon.setValue('volume-level-muted')
+	  }
+	  else {
+	    volIcon.setValue(
+	      'volume-level-'+(
+		Math.round(volume.value*3).toString()
+		.replace('0','none').replace('1','low').replace('2','medium').replace('3','high')
+	      )
+	    )
+	  }
+	}
+      )
+    .catch(err => print(err))
+  }
+}
+
 
 function batFunc() {
     charge.setValue(Utils.readFile(batCapFile).replace(/^\s+|\s+$/g, ''))
     status.setValue(Utils.readFile(batStatFile).replace(/^\s+|\s+$/g, ''))
-    let chargePercent = Math.round(charge.value/10)*10
-    if (status.value == 'Charging') {
-      batIcon.setValue('battery-level-'+chargePercent+'-charging-symbolic'),
-      print('charging!')
+    let chargePercent = Math.floor(charge.value/10)*10
+    if ( chargePercent == 100 ) {
+      batIcon.setValue('battery-level-100-charged-symbolic')
+    }
+    else if (status.value == 'Charging') {
+      batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
     }
     else {
-      batIcon.setValue('battery-level-'+chargePercent+'-symbolic'),
-      print('noChargin')
+      batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
     }
 }
+
+
+function volMenuFunc() {
+  Utils.execAsync(['pw-dump']) 
+    .then(
+      out => {
+	let output = out
+      }
+    )
+    .catch(err => print(err))
+}
+
 
 const myCalendar = Widget.Window({
   name: 'calendar',
@@ -111,7 +160,7 @@ const myCalendar = Widget.Window({
       })
       const keyboardButton = Widget.Button({
 	child: Widget.Icon('keyboard'),
-	onPrimaryClick: () => buttonExec('kill -34 $(pidof wvkbd-mobintl)')
+	onPrimaryClick: () => Utils.execAsync(['bash', '-c', 'kill -34 $(pidof wvkbd-mobintl)'])
       })
 
     const rightBox = Widget.Box({
@@ -143,26 +192,47 @@ const myBar = Widget.Window({
 })
 
     const volumeSlider = Widget.Box({
-      vertical:false,
-      homogeneous: false,
       children: [
-	Widget.Icon({
-	  icon: 'volume',
-	}),
-	Widget.Slider({
-	  on_change: self => volUpd(self.value*100)
-	  min: 0,
-	  max: 1,
-	  draw_value: false,
-	  value: volume.bind()
-	}),
-      })
+	Widget.Box({
+      	  vertical:false,
+      	  homogeneous: false,
+      	  children: [
+      	    Widget.Icon({
+      	      icon: volIcon.bind(),
+      	      css: 'font-size: 24px',
+      	    }),
+      	    Widget.Slider({
+      	      on_change: self => volUpd((self.value)*100),
+      	      min: 0,
+      	      max: 1,
+      	      hexpand: true,
+      	      draw_value: false,
+      	      value: volume.bind()
+      	    }),
+      	    Widget.ToggleButton({
+
+      	    }),
+      	  ]
+      	}),
+	Widget.Revealer({
+	  revealChild: false,
+	  transition: 'slide_down',
+	  child: Widget.Menu({
+	    children: [
+	      volMenuFunc(),
+	    ],
+	  }),
+	})
+      ],
+    })
+
     const brightnessSlider = Widget.Box({
       vertical: false,
       homogeneous: false,
       children: [
 	Widget.Icon({
-	  icon: 'brightness',
+	  icon: brightnessIcon.bind(),
+	  css: 'font-size: 24px',
 	}),
 	Widget.Slider({
 	  on_change: self => brightnessUpd(self.value*100),
@@ -175,19 +245,22 @@ const myBar = Widget.Window({
       ]
     })
 
-  const controlBox = Widget.Box({
-    spacing: 8,
-    vertical: true,
-    css: 'min-width: 200px;',
-    homogeneous: false,
-    children: [
-      brightnessSlider,
-      volumeSlider,
-    ]
+  const controlBox = Widget.EventBox({
+    child: Widget.Box ({
+      spacing: 8,
+      vertical: true,
+      css: 'min-width: 200px;',
+      homogeneous: false,
+      children: [
+	brightnessSlider,
+	volumeSlider,
+      ]
+    })
   })
 
 const controlCenter = Widget.Window({
   name: 'control',
+  layer: 'overlay',
   anchor: ['right', 'top'],
   visible: false,
   margins: [4,6],

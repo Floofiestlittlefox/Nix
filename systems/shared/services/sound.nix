@@ -4,7 +4,7 @@
     pulseaudio.enable = false;
   };
   sound.enable = true;
-  pipewire = {
+  services.pipewire = {
     enable = true;
     alsa = {
       enable = true;

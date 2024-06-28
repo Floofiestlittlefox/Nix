@@ -13,7 +13,7 @@
 		enableCompletion = true;
 		enableVteIntegration = true;
 		autocd = true;
-		dotDir = "$HOME/.config/zsh";
+		dotDir = ".config/zsh";
 		autosuggestion = {
 			enable = true;
 		};
@@ -21,7 +21,7 @@
 			extended = true;
 			expireDuplicatesFirst = true;
 			ignoreDups = true;
-			path = "$HOME/.config/zsh/.zsh_hist";
+			path = ".config/zsh/.zsh_hist";
 			share = true;
 		};
 		plugins = [

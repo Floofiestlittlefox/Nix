@@ -1,17 +1,22 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
-  home.packages = [
+  environment.systemPackages = with pkgs; [
 		appimage-run
   ];
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    desktopManager.plasma6.enable = true;
+    desktopManager= {
+      plasma6.enable = true;
+    };
+    displayManager = {
+      defaultSession = "hyprland";
+    };
+    
     xserver = {
       enable = true;
       displayManager = {
-        gdm.enable = true;
-        defaultSession = "hyprland";
+       gdm.enable = true;
       };
       desktopManager = {
         gnome.enable = true;
@@ -24,6 +29,7 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
+    ssh.askPassword = lib.mkForce "true";
   };
 }
     

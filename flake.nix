@@ -13,24 +13,24 @@
 	hyprland = {
 		type = "git";
 		url="https://github.com/hyprwm/Hyprland";
-                rev="fe7b748eb668136dd0558b7c8279bfcd7ab4d759";
+                rev="ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
 		submodules = true;
    	};
-	hyprland-plugins = {
-		type = "git";
-		url = "https://github.com/hyprwm/hyprland-plugins";
-                rev = "e9457e08ca3ff16dc5a815be62baf9e18b539197";
-		inputs.hyprland.follows = "hyprland";
-	};
+        #hyprland-plugins = {
+	#	type = "git";
+	#	url = "https://github.com/hyprwm/hyprland-plugins";
+        #        rev = "135de7b88649dbe5fea8c997447bdc9d6f15ad86";
+	#	inputs.hyprland.follows = "hyprland";
+	#};
 	hyprgrass = {
                 type = "git";
 		 url = "https://github.com/horriblename/hyprgrass";
-                 rev = "091d0e9a9877d08d5d4f51eb71e255b8c78ffd89";
+                 rev = "78eb74357b428498a8225b2d753b2fe9a463f89e";
 		 inputs.hyprland.follows = "hyprland"; # IMPORTANT
 	};
 	split-monitor-workspaces = {
           type = "git";
-          rev = "b0ee3953eaeba70f3fba7c4368987d727779826a";
+          rev = "2b57b5706cde7577c9cbb4de9e1f9a14777d09af";
 	  url = "https://github.com/Duckonaut/split-monitor-workspaces";
 	  inputs.hyprland.follows = "hyprland";
 	};
@@ -66,7 +66,7 @@
 			home-manager.nixosModules.home-manager {
 				home-manager.useGlobalPkgs = true;
 			    	home-manager.useUserPackages = true;
-			    	home-manager.users.lachlan = import ./home.nix;
+			    	home-manager.users.lachlan = import ./home/home.nix;
 				home-manager.extraSpecialArgs = { inherit inputs; };
 				}
 			];
@@ -80,7 +80,7 @@
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users.lachlan = import ./home.nix;
+					home-manager.users.lachlan = import ./home/home.nix;
 					home-manager.extraSpecialArgs = { inherit inputs; };
 				}
 			];
