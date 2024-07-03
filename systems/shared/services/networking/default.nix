@@ -1,5 +1,8 @@
 {lib, pkgs, ...}:
 {
+  environment.systemPackages = with pkgs; [
+    sshuttle
+  ];
   services = {
     samba = {
       enable = true;
@@ -63,6 +66,9 @@
         PermitRootLogin = "prohibit-password";
       };
     };
+    openvpn.servers = {
+      homeVPN = { config = '' config ./client.ovpn ''; };
+    };
     # Printing
     printing = {
       enable = true;
@@ -81,6 +87,7 @@
         allowPing = true;
         allowedTCPPorts = lib.mkDefault [ 22 ];
       };
+      resolvconf.enable = true;
     };
 
   programs.mtr.enable = true;
