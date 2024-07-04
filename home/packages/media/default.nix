@@ -6,6 +6,7 @@
     ./video.nix
     ./games.nix
     ./drawing.nix
+    ./reading.nix
 
   ];
 }

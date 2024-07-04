@@ -11,6 +11,7 @@
           isDefault = true;
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
+            libredirect
           ];
           settings = {
             "browser.startup.homepage" = "https://nixos.org";
@@ -20,6 +21,11 @@
               title = "NixOS";
               url = "https://nixos.org";
             }];
+          };
+          search = {
+            default = "DuckDuckGo";
+            privateDefault = "DuckDuckGo";
+            force = true;
           };
         };
       };

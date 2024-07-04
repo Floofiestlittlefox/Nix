@@ -20,9 +20,10 @@ wayland.windowManager.hyprland = {
 		enable = true;
 		package = inputs.hyprland.packages.${pkgs.system}.default;
                 systemd.enable = true;
-                xwayland.enable = false;
+                xwayland.enable = true;
 		extraConfig = ''
 		env=XDG_MENU_PREFIX,plasma-
+                env=NIXOS_OZONE_WL=1
 		input {
 			follow_mouse = 1
 			mouse_refocus = true
@@ -109,7 +110,7 @@ wayland.windowManager.hyprland = {
 				"swayosd-server &"
 				"waypaper --restore --random --backend swww &"
 				"iio-hyprland &"
-                                "wvkbd-mobintl -L 300"
+                                "wvkbd-mobintl -L -H 300"
                                 "ags"
 				
 			];

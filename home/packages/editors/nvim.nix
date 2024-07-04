@@ -9,6 +9,7 @@
       ltex-ls
       javascript-typescript-langserver
       typescript
+      ripgrep
     ];
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 

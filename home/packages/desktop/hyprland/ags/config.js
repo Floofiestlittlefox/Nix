@@ -56,7 +56,7 @@ function volUpd(value) {
 
 function volFunc(i) {
   if (i == 'change') {
-    Utils.execAsync(['bash', '-c', './vol.sh'])
+    Utils.execAsync(['bash', '-c', '$HOME/.config/ags/vol.sh'])
       .then(
 	out => {
 	  volume.setValue(
@@ -84,13 +84,15 @@ function batFunc() {
     charge.setValue(Utils.readFile(batCapFile).replace(/^\s+|\s+$/g, ''))
     status.setValue(Utils.readFile(batStatFile).replace(/^\s+|\s+$/g, ''))
     let chargePercent = Math.floor(charge.value/10)*10
-    if ( chargePercent == 100 ) {
+    if ( chargePercent.value == 100 ) {
+      print('1'),
       batIcon.setValue('battery-level-100-charged-symbolic')
     }
     else if (status.value == 'Charging') {
-      batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
+      batIcon.setValue('battery-level-'+chargePercent+'-charging-symbolic')
     }
     else {
+      print('3'),
       batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
     }
 }
@@ -209,20 +211,8 @@ const myBar = Widget.Window({
       	      draw_value: false,
       	      value: volume.bind()
       	    }),
-      	    Widget.ToggleButton({
-
-      	    }),
       	  ]
       	}),
-	Widget.Revealer({
-	  revealChild: false,
-	  transition: 'slide_down',
-	  child: Widget.Menu({
-	    children: [
-	      volMenuFunc(),
-	    ],
-	  }),
-	})
       ],
     })
 

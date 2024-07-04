@@ -3,7 +3,7 @@
   imports = [
     ./sound.nix
     ./system.nix
-    ./networking.nix
+    ./networking
     ./system.nix
     ./desktop.nix
   ];

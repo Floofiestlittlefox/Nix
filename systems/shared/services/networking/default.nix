@@ -67,7 +67,12 @@
       };
     };
     openvpn.servers = {
-      homeVPN = { config = '' config ./client.ovpn ''; };
+      homeVPN = { 
+        config = '' config /home/lachlan/.config/nix/systems/shared/services/networking/client.ovpn ''; 
+      updateResolvConf = true;
+      };
+
+
     };
     # Printing
     printing = {
