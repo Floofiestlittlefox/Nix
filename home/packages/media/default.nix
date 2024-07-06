@@ -7,6 +7,7 @@
     ./games.nix
     ./drawing.nix
     ./reading.nix
+    ./chat.nix
 
   ];
 }

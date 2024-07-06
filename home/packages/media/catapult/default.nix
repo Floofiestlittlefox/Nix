@@ -1,11 +1,11 @@
 {stdenv, fetchurl, autoPatchelfHook, pkgs, ... }:
 stdenv.mkDerivation rec {
-  name = "Catapult-${version}";
+  name = "catapult-${version}";
   version = "24.05a";
 
-  src = fetchurl {
-    url = "https://github.com/qrrk/Catapult/releases/download/24.05a/catapult-linux-x64-${version}";
-    hash = "";
+  file = fetchurl {
+    url = "https://github.com/qrrk/Catapult/releases/download/24.05a/catapult-linux-x64-24.05a";
+    hash = "sha256-QfILuKlSbxY3UrmqCkRjSBNFUropFSBSBYC/WfbUY98=";
   };
 
   nativeBuildInputs = [
@@ -19,12 +19,13 @@ stdenv.mkDerivation rec {
     pkgs.SDL2_mixer
     pkgs.freetype
   ];
+  dontUnpack = true;
   installPhase = ''
-    runHook preInstall
-    install -m755 -D catapult-linux-x64-${version} $out/bin/catapult
+    mkdir -p $out/bin
+    install -m 744 -D $file $out/bin/catapult-linux-x64-24.05a
     runHook postInstall
   '';
 
-};
+}
 
 
