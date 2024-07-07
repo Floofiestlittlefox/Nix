@@ -3,7 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./services
-    ../shared/
+    ../shared
   ];
   networking.hostName = "lachlanDesktop";
 }
