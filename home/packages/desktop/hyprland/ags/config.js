@@ -8,6 +8,10 @@ let volume = Variable('')
 let volIcon = Variable('')
 volFunc('change')
 
+
+let volInput = Variable(volMenuFunc('in'))
+let volOutput = Variable(volMenuFunc('out'))
+
 let status = Variable('')
 let charge = Variable('')
 let batIcon = Variable('')
@@ -98,11 +102,14 @@ function batFunc() {
 }
 
 
-function volMenuFunc() {
+function volMenuFunc(type) {
   Utils.execAsync(['pw-dump']) 
     .then(
       out => {
-	let output = out
+	let output = JSON.parse(out),
+	if (output.some(val => val.type == "PipeWire:Interface:Device"))
+	  print(output.value)
+	;
       }
     )
     .catch(err => print(err))

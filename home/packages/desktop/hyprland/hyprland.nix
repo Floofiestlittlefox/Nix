@@ -12,6 +12,7 @@
 		nwg-drawer
 		squeekboard
 		libnotify
+                wl-clipboard
             kdePackages.polkit-kde-agent-1
             (callPackage ./wvkbd-n7n {})
             (callPackage ./iio-hyprland {})

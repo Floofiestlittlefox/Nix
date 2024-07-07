@@ -16,12 +16,6 @@
                 rev="ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
 		submodules = true;
    	};
-        #hyprland-plugins = {
-	#	type = "git";
-	#	url = "https://github.com/hyprwm/hyprland-plugins";
-        #        rev = "135de7b88649dbe5fea8c997447bdc9d6f15ad86";
-	#	inputs.hyprland.follows = "hyprland";
-	#};
 	hyprgrass = {
                 type = "git";
 		 url = "https://github.com/horriblename/hyprgrass";
@@ -49,11 +43,12 @@
         flake-utils.url = "github:numtide/flake-utils";
 	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         ags.url = "github:Aylur/ags";
+        sops-nix.url = "github:Mic92/sops-nix";
 
         walker.url = "github:abenz1267/walker";
 };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ...}@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, sops-nix, ...}@inputs: {
 
   	nixosConfigurations = {
 		lachlanLaptop = nixpkgs.lib.nixosSystem {
@@ -61,6 +56,7 @@
 		specialArgs = { inherit inputs; };
 		modules = [ 
 			./systems/laptop
+                        sops-nix.nixosModules.sops
                         nur.nixosModules.nur
 			nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 			home-manager.nixosModules.home-manager {
@@ -76,6 +72,7 @@
 			specialArgs = { inherit inputs; };
 			modules = [
 				./systems/desktop
+                                sops-nix.nixosModules.sops
                                 nur.nixosModules.nur
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;

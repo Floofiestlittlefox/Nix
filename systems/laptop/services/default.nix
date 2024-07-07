@@ -18,4 +18,5 @@
   hardware = {
     sensor.iio.enable = true;
   };
+  powerManagement.powertop.enable = true;
 }

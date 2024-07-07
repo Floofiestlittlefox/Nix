@@ -4,8 +4,10 @@
     address = "lachlanleoknell@gmail.com";
     thunderbird = {
       enable = true;
-      profiles = "default";
+      profiles = [ "default" ];
     };
+    primary = true;
+    realName = "Lachlan Knell";
   };
 
   programs.thunderbird = {
@@ -13,7 +15,6 @@
     profiles = {
       default = {
         isDefault = true;
-        name = "default";
       };
     };
   };
