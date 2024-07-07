@@ -32,7 +32,7 @@
     ssh.askPassword = lib.mkForce "true";
   };
   virtualisation = {
-    waydroid.enable = true;
+    waydroid.enable = false;
   };
 }
     

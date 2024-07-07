@@ -66,6 +66,9 @@
         PermitRootLogin = "prohibit-password";
       };
     };
+
+
+
     openvpn.servers = {
       homeVPN = { 
         config = '' config /home/lachlan/.config/nix/systems/shared/services/networking/client.ovpn ''; 
@@ -96,4 +99,7 @@
     };
 
   programs.mtr.enable = true;
+  users.users."lachlan".openssh.authorizedKeys.keyFiles = [
+    ./authorized_keys
+  ];
 }
