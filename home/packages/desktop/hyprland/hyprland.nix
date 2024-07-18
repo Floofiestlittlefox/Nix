@@ -2,7 +2,9 @@
 {
 	home.packages = with pkgs; [
 		grimblast
-    brightnessctl
+                variety
+                swaybg
+                brightnessctl
 		slurp
 		swaynotificationcenter
 		swayosd
@@ -13,6 +15,7 @@
 		squeekboard
 		libnotify
                 wl-clipboard
+                libdbusmenu-gtk3
             kdePackages.polkit-kde-agent-1
             (callPackage ./wvkbd-n7n {})
             (callPackage ./iio-hyprland {})
@@ -109,9 +112,10 @@ wayland.windowManager.hyprland = {
 				"swaync &"
                                 "fcitx5"
 				"swayosd-server &"
-				"waypaper --restore --random --backend swww &"
+                                "swww-daemon &"
+                                "variety &"
 				"iio-hyprland &"
-                                "wvkbd-mobintl -L -H 300"
+                                "wvkbd-mobintl -L 300 --hidden"
                                 "ags"
 				
 			];
@@ -199,10 +203,7 @@ wayland.windowManager.hyprland = {
 		};
 		plugins = [
 			inputs.hyprgrass.packages.${pkgs.system}.default
-                        #inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-                        #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
 			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-                        #inputs.hycov.packages.${pkgs.system}.hycov
 		];
 	};
 }

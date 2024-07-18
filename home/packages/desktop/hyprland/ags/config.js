@@ -9,9 +9,6 @@ let volIcon = Variable('')
 volFunc('change')
 
 
-let volInput = Variable(volMenuFunc('in'))
-let volOutput = Variable(volMenuFunc('out'))
-
 let status = Variable('')
 let charge = Variable('')
 let batIcon = Variable('')
@@ -100,20 +97,19 @@ function batFunc() {
       batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
     }
 }
-
-
-function volMenuFunc(type) {
-  Utils.execAsync(['pw-dump']) 
-    .then(
-      out => {
-	let output = JSON.parse(out),
-	if (output.some(val => val.type == "PipeWire:Interface:Device"))
-	  print(output.value)
-	;
-      }
-    )
-    .catch(err => print(err))
-}
+//volMenuFunc()
+//
+//function volMenuFunc() {
+//  let output = (Utils.exec('./volMenu.sh out'))
+//  let input = (Utils.exec('./volMenu.sh in'))
+//  const outArr = output.split(' ');
+//  const inpArr = output.split(' ');
+//  for ( var i = 0; i < outArr.length; i++) {
+//    Utils.execAsync(['./volMenu.sh', 'name', outArr[i]])
+//      .then(
+//	out => 
+//  }
+//};
 
 
 const myCalendar = Widget.Window({
@@ -170,6 +166,19 @@ const myCalendar = Widget.Window({
       const keyboardButton = Widget.Button({
 	child: Widget.Icon('keyboard'),
 	onPrimaryClick: () => Utils.execAsync(['bash', '-c', 'kill -34 $(pidof wvkbd-mobintl)'])
+      })
+      const systemtray = await Service.import('systemtray')
+
+      /** @param {import('types/service/systemtray').TrayItem} item */
+      const SysTrayItem = item => Widget.Button({
+	  child: Widget.Icon().bind('icon', item, 'icon'),
+	  tooltipMarkup: item.bind('tooltip_markup'),
+	  onPrimaryClick: (_, event) => item.activate(event),
+	  onSecondaryClick: (_, event) => item.openMenu(event),
+      });
+
+      const sysTray = Widget.Box({
+	  children: systemtray.bind('items').as(i => i.map(SysTrayItem))
       })
 
     const rightBox = Widget.Box({

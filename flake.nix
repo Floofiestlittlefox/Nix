@@ -32,6 +32,8 @@
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
 	};
+        typst.url = "github:typst/typst";
+        typst.inputs.nixpkgs.follows = "nixpkgs";
 
 	nixvim = {
 	    url = "github:nix-community/nixvim";

@@ -51,7 +51,7 @@
     defaultUserShell = pkgs.zsh;
     users.lachlan = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "lp" "docker" "video" "input" ];
+      extraGroups = [ "adbusers" "wheel" "networkmanager" "lp" "docker" "video" "input" ];
     };
   };
 
