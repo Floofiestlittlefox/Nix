@@ -1,7 +1,7 @@
 {pkgs, inputs, ...}:
 {
   home.packages = with pkgs; [
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ];
   gtk = {
     enable = true;

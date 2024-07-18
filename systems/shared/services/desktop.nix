@@ -6,9 +6,6 @@
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    desktopManager= {
-      plasma6.enable = true;
-    };
     displayManager = {
       defaultSession = "hyprland";
     };
@@ -17,10 +14,6 @@
       enable = true;
       displayManager = {
        gdm.enable = true;
-      };
-      desktopManager = {
-        gnome.enable = true;
-        runXdgAutostartIfNone = true;
       };
     };
   };

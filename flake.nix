@@ -29,25 +29,24 @@
 	  inputs.hyprland.follows = "hyprland";
 	};
 
-	vulpix = {
-		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
-	};
-        typst.url = "github:typst/typst";
-        typst.inputs.nixpkgs.follows = "nixpkgs";
-
-	nixvim = {
-	    url = "github:nix-community/nixvim";
-	    inputs.nixpkgs.follows = "nixpkgs";
-	};
-
-        emacs-overlay.url = "github:nix-community/emacs-overlay/";
-        nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
-        flake-utils.url = "github:numtide/flake-utils";
-	nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-        ags.url = "github:Aylur/ags";
-        sops-nix.url = "github:Mic92/sops-nix";
-
-        walker.url = "github:abenz1267/walker";
+  vulpix = {
+    url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
+  };
+  typst = {
+    url = "github:typst/typst";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  nixvim = {
+    url = "github:nix-community/nixvim";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  emacs-overlay.url = "github:nix-community/emacs-overlay/";
+  nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
+  flake-utils.url = "github:numtide/flake-utils";
+  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  ags.url = "github:Aylur/ags";
+  sops-nix.url = "github:Mic92/sops-nix";
+  walker.url = "github:abenz1267/walker";
 };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, nur, sops-nix, ...}@inputs: {
