@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
 		appimage-run
+                wmctrl
   ];
   services = {
     flatpak.enable = true;
@@ -9,7 +10,9 @@
     displayManager = {
       defaultSession = "hyprland";
     };
-    
+    dbus = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       displayManager = {
