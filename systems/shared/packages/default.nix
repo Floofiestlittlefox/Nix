@@ -3,6 +3,7 @@
   imports = [
     ./fonts.nix
     ./games.nix
+    ./desktop.nix
   ];
   programs.zsh.enable = true;
   programs.adb.enable = true;
