@@ -50,7 +50,7 @@ wayland.windowManager.hyprland = {
 			workspace_swipe_cancel_ratio = 0.15
 
                         workspace_swipe_distance = 700
-			workspace_swipe_touch=true
+			workspace_swipe_touch=false
 		}
 		plugin:touch_gestures {
 			sensitivity = 6.0
@@ -68,16 +68,6 @@ wayland.windowManager.hyprland = {
                         hideTopLayers = true
 		}
 
-                plugin:hyprexpo {
-                  gap_size = 5
-                  workspace_method = center current
-
-                  enable_gesture = true
-                  gesture_fingers = 3
-                  gesture_distance = 300
-                  gesture_posititive = true
-                }
-		
 		general {
                         resize_on_border = true
 
