@@ -9,8 +9,8 @@ let volIcon = Variable('')
 volFunc('change')
 
 
-let volInput = Variable(volMenuFunc('in'))
-let volOutput = Variable(volMenuFunc('out'))
+//let volInput = Variable(volMenuFunc('in'))
+//let volOutput = Variable(volMenuFunc('out'))
 
 let status = Variable('')
 let charge = Variable('')
@@ -102,18 +102,18 @@ function batFunc() {
 }
 
 
-function volMenuFunc(type) {
-  Utils.execAsync(['pw-dump']) 
-    .then(
-      out => {
-	let output = JSON.parse(out),
-	if (output.some(val => val.type == "PipeWire:Interface:Device"))
-	  print(output.value)
-	;
-      }
-    )
-    .catch(err => print(err))
-}
+//function volMenuFunc(type) {
+//  Utils.execAsync(['pw-dump']) 
+//    .then(
+//      out => {
+//	let output = JSON.parse(out),
+//	if (output.some(val => val.type == "PipeWire:Interface:Device"))
+//	  print(output.value)
+//	;
+//      }
+//    )
+//    .catch(err => print(err))
+//}
 
 
 const myCalendar = Widget.Window({
@@ -171,6 +171,12 @@ const myCalendar = Widget.Window({
 	child: Widget.Icon('keyboard'),
 	onPrimaryClick: () => Utils.execAsync(['bash', '-c', 'kill -34 $(pidof wvkbd-mobintl)'])
       })
+      const wallButton = Widget.Button({
+	child: Widget.Icon('preferences-wallpaper'),
+	onPrimaryClick: () => Utils.execAsync(['bash', '-c', '/home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh /home/lachlan/.config/nix/home/themes/Wallpapers/'])
+	.catch(err => print(err))
+      })
+
 
     const rightBox = Widget.Box({
       spacing: 8,
@@ -178,6 +184,7 @@ const myCalendar = Widget.Window({
       vertical: false,
       homogeneous: false,
       children: [
+	wallButton,
 	keyboardButton,
 	controlCenterButton,
       ]

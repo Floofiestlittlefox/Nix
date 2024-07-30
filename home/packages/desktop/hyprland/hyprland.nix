@@ -3,6 +3,7 @@
 	home.packages = with pkgs; [
 		grimblast
     brightnessctl
+    wofi
 		slurp
 		swaynotificationcenter
 		swayosd
@@ -99,7 +100,7 @@ wayland.windowManager.hyprland = {
 			windowrulev2= [
 				"float,class:^(nwg-drawer)$,title:^(nwg-drawer)$"
 				"pseudo,class:^(squeekboard)$,title:^(squeekboard)$"
-                                "stayfocused,class:^(walker)$,title::^(walker)$"
+                                "stayfocused,class:^(wofi)$,title::^(wofi)$"
 			];
 			animation = [
 				"windows,1,3,default,popin 80%"
@@ -109,9 +110,10 @@ wayland.windowManager.hyprland = {
 				"swaync &"
                                 "fcitx5"
 				"swayosd-server &"
-				"waypaper --restore --random --backend swww &"
+				"swww-daemon &"
+                                "/home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh /home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh &"
 				"iio-hyprland &"
-                                "wvkbd-mobintl -L -H 300"
+                                "wvkbd-mobintl -L 300 -H 300 --hidden"
                                 "ags"
 				
 			];
@@ -126,7 +128,7 @@ wayland.windowManager.hyprland = {
 
 			];
 			bindr = [
-                                "$mod, P, exec, walker"
+                                "$mod, P, exec, wofi --show drun"
                                 #"$mod,Super_L, overview:toggle"
                                 #"$mod, Super_L, submap, overview"
 				"Caps_Lock,Caps_Lock, exec, swayosd-client --caps-lock"

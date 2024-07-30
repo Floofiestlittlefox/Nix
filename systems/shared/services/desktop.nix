@@ -2,6 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
 		appimage-run
+                libinput-gestures
+                wmctrl
   ];
   services = {
     flatpak.enable = true;
@@ -10,16 +12,18 @@
       plasma6.enable = true;
     };
     displayManager = {
+      sddm.enable = true;
+      sddm.wayland.enable = true;
       defaultSession = "hyprland";
     };
     
     xserver = {
       enable = true;
       displayManager = {
-       gdm.enable = true;
+       gdm.enable = false;
       };
       desktopManager = {
-        gnome.enable = true;
+        gnome.enable = false;
         runXdgAutostartIfNone = true;
       };
     };
