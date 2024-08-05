@@ -53,7 +53,6 @@
 			cdi = "zi";
 		};
 		initExtra = ''
-                        $(cat ~/.cache/wal/sequences)
 			update () { i=$(pwd); cd ~/.config/nix/; sudo nixos-rebuild switch --flake '.#'$(hostname); cd $i }
 			unsetopt beep
 

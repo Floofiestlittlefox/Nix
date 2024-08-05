@@ -5,7 +5,10 @@
     ./services
   ];
   nixpkgs.config = {
-    allowUnfree = true;
+     allowUnfree = true;
+     permittedInsecurePackages = [
+      "electron-27.3.11"
+    ];
   };
   nix.settings = {
     experimental-features = [

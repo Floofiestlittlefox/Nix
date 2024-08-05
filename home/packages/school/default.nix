@@ -10,5 +10,7 @@
 		zotero
 		qalculate-qt
 		rnote
+                logseq
+                texliveFull
   ];
 }

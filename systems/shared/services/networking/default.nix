@@ -69,14 +69,15 @@
 
 
 
-    openvpn.servers = {
-      homeVPN = { 
-        config = '' config /home/lachlan/.config/nix/systems/shared/services/networking/client.ovpn ''; 
-      updateResolvConf = true;
-      };
+    #openvpn.servers = {
+    #  homeVPN = { 
+    #    config = '' config /home/lachlan/.config/nix/systems/shared/services/networking/client.ovpn ''; 
+    #  updateResolvConf = true;
+    #  };
 
 
-    };
+    #:w
+  #};
     # Printing
     printing = {
       enable = true;

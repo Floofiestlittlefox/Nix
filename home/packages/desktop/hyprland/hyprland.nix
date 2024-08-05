@@ -110,7 +110,7 @@ wayland.windowManager.hyprland = {
 				"swaync &"
                                 "fcitx5"
 				"swayosd-server &"
-				"swww-daemon &"
+                                "swww-daemon &"
                                 "/home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh /home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh &"
 				"iio-hyprland &"
                                 "wvkbd-mobintl -L 300 -H 300 --hidden"
