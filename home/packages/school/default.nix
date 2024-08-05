@@ -1,11 +1,11 @@
-{pkgs, ...}:
+{pkgs, inputs,...}:
 {
   home.packages = with pkgs; [
 		calibre
 		libreoffice
 		obsidian
 		p3x-onenote
-		typst
+                inputs.typst.packages.${pkgs.system}.default
 		typst-lsp
 		zotero
 		qalculate-qt

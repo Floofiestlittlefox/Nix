@@ -8,15 +8,14 @@
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    desktopManager= {
-      plasma6.enable = true;
-    };
     displayManager = {
       sddm.enable = true;
       sddm.wayland.enable = true;
       defaultSession = "hyprland";
     };
-    
+    dbus = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       displayManager = {

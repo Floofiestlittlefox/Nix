@@ -1,5 +1,8 @@
 {pkgs, inputs, ...}:
 {
+  home.packages = with pkgs; [
+    adwaita-icon-theme
+  ];
   gtk = {
     enable = true;
     cursorTheme = {
@@ -12,7 +15,7 @@
       name = "Orchis-Orange-Dark";
     };
     iconTheme = {
-      name = "ePapirus-Dark";
+      name = "ePapirus-dark";
       package = pkgs.epapirus-icon-theme;
     };
     font = {

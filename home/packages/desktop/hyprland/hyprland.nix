@@ -2,8 +2,11 @@
 {
 	home.packages = with pkgs; [
 		grimblast
-    brightnessctl
-    wofi
+                 brightnessctl
+                wofi
+                variety
+                swaybg
+                brightnessctl
 		slurp
 		swaynotificationcenter
 		swayosd
@@ -14,6 +17,7 @@
 		squeekboard
 		libnotify
                 wl-clipboard
+                libdbusmenu-gtk3
             kdePackages.polkit-kde-agent-1
             (callPackage ./wvkbd-n7n {})
             (callPackage ./iio-hyprland {})
@@ -48,7 +52,7 @@ wayland.windowManager.hyprland = {
 			workspace_swipe_cancel_ratio = 0.15
 
                         workspace_swipe_distance = 700
-			workspace_swipe_touch=true
+			workspace_swipe_touch=false
 		}
 		plugin:touch_gestures {
 			sensitivity = 6.0
@@ -66,16 +70,6 @@ wayland.windowManager.hyprland = {
                         hideTopLayers = true
 		}
 
-                plugin:hyprexpo {
-                  gap_size = 5
-                  workspace_method = center current
-
-                  enable_gesture = true
-                  gesture_fingers = 3
-                  gesture_distance = 300
-                  gesture_posititive = true
-                }
-		
 		general {
                         resize_on_border = true
 
@@ -114,6 +108,7 @@ wayland.windowManager.hyprland = {
                                 "/home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh /home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh &"
 				"iio-hyprland &"
                                 "wvkbd-mobintl -L 300 -H 300 --hidden"
+				"iio-hyprland &"
                                 "ags"
 				
 			];
@@ -201,10 +196,7 @@ wayland.windowManager.hyprland = {
 		};
 		plugins = [
 			inputs.hyprgrass.packages.${pkgs.system}.default
-                        #inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-                        #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
 			inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-                        #inputs.hycov.packages.${pkgs.system}.hycov
 		];
 	};
 }

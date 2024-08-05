@@ -4,11 +4,11 @@
     (callPackage ./plexamp{})
     audacious
     exaile
-		rhythmbox
-
-		picard
-		playerctl
+    rhythmbox
+    picard
+    playerctl
     strawberry
+    finamp
 
   ];
 }

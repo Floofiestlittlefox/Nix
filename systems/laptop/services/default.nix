@@ -11,6 +11,7 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       };
     };
+    libinput.enable = true;
   };
   virtualisation = {
     docker.enable = false;

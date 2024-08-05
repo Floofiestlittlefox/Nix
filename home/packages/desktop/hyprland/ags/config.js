@@ -6,11 +6,8 @@ const batStatFile='/sys/class/power_supply/BAT0/status'
 
 let volume = Variable('')
 let volIcon = Variable('')
-volFunc('change')
 
-
-//let volInput = Variable(volMenuFunc('in'))
-//let volOutput = Variable(volMenuFunc('out'))
+const audio = await Service.import('audio')
 
 let status = Variable('')
 let charge = Variable('')
@@ -36,11 +33,11 @@ Utils.subprocess(
   (output) => (batFunc())
 )
 
-Utils.subprocess(
-  ['bash', '-c', 'pactl subscribe'],
-  (output) => volFunc(output.match('change')), 
-  (err) => print(err),
-)
+//Utils.subprocess(
+//  ['bash', '-c', 'pactl subscribe'],
+//  (output) => volFunc(output.match('change')), 
+//  (err) => print(err),
+//)
 
 function brightnessUpd(value) {
   value = value.toString(),
@@ -49,39 +46,40 @@ function brightnessUpd(value) {
 
 function brightnessFunc() {
     brightness.setValue(Utils.readFile(backlightFile)/255)
-    brightnessIcon.setValue('brightness-'+(Math.round(brightness.value*2).toString().replace('0','low').replace('1','medium').replace('2','high'))+'-symbolic')
+    brightnessIcon.setValue("display-brightness-symbolic")
+  //brightnessIcon.setValue('brightness-'+(Math.round(brightness.value*2).toString().replace('0','low').replace('1','medium').replace('2','high'))+'-symbolic')
 }
 
-function volUpd(value) {
-  value = value.toString(),
-  Utils.execAsync(['pactl','set-sink-volume', '@DEFAULT_SINK@', value+'%'])
-}
+//function volUpd(value) {
+//  value = value.toString(),
+//  Utils.execAsync(['pactl','set-sink-volume', '@DEFAULT_SINK@', value+'%'])
+//}
 
 
-function volFunc(i) {
-  if (i == 'change') {
-    Utils.execAsync(['bash', '-c', '$HOME/.config/ags/vol.sh'])
-      .then(
-	out => {
-	  volume.setValue(
-	    out.toString().replace(/[^0-9].*/,'')/100
-	  ); 
-	  if (out.toString().replace(/(.*)[^a-z]/, '') == 'yes') {
-	    volIcon.setValue('volume-level-muted')
-	  }
-	  else {
-	    volIcon.setValue(
-	      'volume-level-'+(
-		Math.round(volume.value*3).toString()
-		.replace('0','none').replace('1','low').replace('2','medium').replace('3','high')
-	      )
-	    )
-	  }
-	}
-      )
-    .catch(err => print(err))
-  }
-}
+//function volFunc(i) {
+//  if (i == 'change') {
+//    Utils.execAsync(['bash', '-c', '$HOME/.config/ags/vol.sh'])
+//      .then(
+//	out => {
+//	  volume.setValue(
+//	    out.toString().replace(/[^0-9].*/,'')/100
+//	  ); 
+//	  if (out.toString().replace(/(.*)[^a-z]/, '') == 'yes') {
+//	    volIcon.setValue('audio-volume-muted')
+//	  }
+//	  else {
+//	    volIcon.setValue(
+//	      'audio-volume-'+(
+//		Math.ceil(volume.value*3).toString()
+//		.replace('0','muted').replace('1','low').replace('2','medium').replace('3','high')
+//	      )+'-symbolic'
+//	    )
+//	  }
+//	}
+//      )
+//    .catch(err => print(err))
+//  }
+//}
 
 
 function batFunc() {
@@ -100,8 +98,29 @@ function batFunc() {
       batIcon.setValue('battery-level-'+chargePercent+'-symbolic')
     }
 }
+//volMenuFunc()
+//
+//function volMenuFunc() {
+//  let output = (Utils.exec('./volMenu.sh out'))
+//  let input = (Utils.exec('./volMenu.sh in'))
+//  const outArr = output.split(' ');
+//  const inpArr = output.split(' ');
+//  for ( var i = 0; i < outArr.length; i++) {
+//    Utils.execAsync(['./volMenu.sh', 'name', outArr[i]])
+//      .then(
+//	out => 
+//  }
+//};
 
+/** @param {'speaker' | 'microphone'} type */
+const VolumeSlider = (type = 'speaker') => Widget.Slider({
+    hexpand: true,
+    drawValue: false,
+    onChange: ({ value }) => audio[type].volume = value,
+    value: audio[type].bind('volume'),
+})
 
+<<<<<<< HEAD
 //function volMenuFunc(type) {
 //  Utils.execAsync(['pw-dump']) 
 //    .then(
@@ -115,6 +134,10 @@ function batFunc() {
 //    .catch(err => print(err))
 //}
 
+=======
+const speakerSlider = VolumeSlider('speaker')
+const micSlider = VolumeSlider('microphone')
+>>>>>>> 0734f1a05901c4bb36fc39c64f0ef91f6618f1f8
 
 const myCalendar = Widget.Window({
   name: 'calendar',
@@ -132,9 +155,6 @@ const myCalendar = Widget.Window({
   })
 
 })
-
-
-	
 
       const timeButton = Widget.ToggleButton({
 	child: Widget.Label({ label: date.bind() }),
@@ -168,15 +188,31 @@ const myCalendar = Widget.Window({
 	onToggled: () => controlCenter.visible = !controlCenter.visible
       })
       const keyboardButton = Widget.Button({
-	child: Widget.Icon('keyboard'),
+	child: Widget.Icon('input-keyboard-symbolic'),
 	onPrimaryClick: () => Utils.execAsync(['bash', '-c', 'kill -34 $(pidof wvkbd-mobintl)'])
       })
+<<<<<<< HEAD
       const wallButton = Widget.Button({
 	child: Widget.Icon('preferences-wallpaper'),
 	onPrimaryClick: () => Utils.execAsync(['bash', '-c', '/home/lachlan/.config/nix/home/themes/Wallpapers/wall.sh /home/lachlan/.config/nix/home/themes/Wallpapers/'])
 	.catch(err => print(err))
       })
 
+=======
+      const systemtray = await Service.import('systemtray')
+
+      /** @param {import('types/service/systemtray').TrayItem} item */
+      const SysTrayItem = item => Widget.Button({
+	  child: Widget.Icon().bind('icon', item, 'icon'),
+	  tooltipMarkup: item.bind('tooltip_markup'),
+	  onPrimaryClick: (_, event) => item.activate(event),
+	  onSecondaryClick: (_, event) => item.openMenu(event),
+      });
+
+      const sysTray = Widget.Box({
+	  children: systemtray.bind('items').as(i => i.map(SysTrayItem))
+      })
+>>>>>>> 0734f1a05901c4bb36fc39c64f0ef91f6618f1f8
 
     const rightBox = Widget.Box({
       spacing: 8,
@@ -207,27 +243,82 @@ const myBar = Widget.Window({
   child: barBox,
 })
 
+const speakerRevealer = Widget.Revealer({
+	  revealChild: false,
+	  transitionDuration: 10,
+	  transition: 'slide_right',
+	  child: Widget.Label({
+	    
+	    text: 'hello!'
+	  }),
+})
+
+
     const volumeSlider = Widget.Box({
+      vertical:true,
+      homogeneous: true,
       children: [
 	Widget.Box({
       	  vertical:false,
       	  homogeneous: false,
       	  children: [
-      	    Widget.Icon({
-      	      icon: volIcon.bind(),
-      	      css: 'font-size: 24px',
-      	    }),
-      	    Widget.Slider({
-      	      on_change: self => volUpd((self.value)*100),
-      	      min: 0,
-      	      max: 1,
-      	      hexpand: true,
-      	      draw_value: false,
-      	      value: volume.bind()
-      	    }),
+      	    Widget.Button({
+	      on_clicked: () => {
+		audio.speaker.is_muted = !audio.speaker.is_muted
+	      },
+	      child: Widget.Icon().hook(audio.speaker, self => {
+		const vol = audio.speaker.volume * 100;
+		const icon = [
+		  [101, 'overamplified'],
+		  [67, 'high'],
+		  [34, 'medium'],
+		  [1, 'low'],
+		  [0, 'muted'],
+		].find(([threshold]) => threshold <= vol)?.[1];
+		if ( audio.speaker.is_muted == false ) {
+		  self.icon = `audio-volume-${icon}-symbolic`;
+		}
+		else {
+		  self.icon = `audio-volume-muted-symbolic`;
+		}
+	     }),
+	    }),
+	    speakerSlider,
+	    Widget.Button({
+	      on_clicked: () => speakerRevealer.revealChild = !speakerRevealer.revealChild,
+	      child: Widget.Icon('keyboard')
+	    }),
       	  ]
       	}),
-      ],
+	speakerRevealer,
+	Widget.Box({
+      	  vertical:false,
+      	  homogeneous: false,
+      	  children: [
+      	    Widget.Button({
+	      on_clicked: () => {
+		audio.microphone.is_muted = !audio.microphone.is_muted
+	      },
+	      child: Widget.Icon().hook(audio.microphone, self => {
+		const vol = audio.microphone.volume * 100;
+		const icon = [
+		  [67, 'sensitivity-high'],
+		  [34, 'sensitivity-medium'],
+		  [1, 'sensitivity-low'],
+		  [0, 'disabled'],
+		].find(([threshold]) => threshold <= vol)?.[1];
+		if ( audio.microphone.is_muted == false ) {
+		  self.icon = `microphone-${icon}-symbolic`;
+		}
+		else {
+		  self.icon = `microphone-disabled-symbolic`;
+		}
+	     }),
+	  }),
+	micSlider, 
+	],
+      })
+      ]
     })
 
     const brightnessSlider = Widget.Box({

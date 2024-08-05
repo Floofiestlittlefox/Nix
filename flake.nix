@@ -25,7 +25,6 @@
 	  url = "https://github.com/Duckonaut/split-monitor-workspaces";
 	  inputs.hyprland.follows = "hyprland";
 	};
-
 	vulpix = {
 		url = "git+https://gitlab.com/bulkiestpizza/vulpix-cursors";
 	};

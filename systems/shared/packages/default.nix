@@ -3,8 +3,10 @@
   imports = [
     ./fonts.nix
     ./games.nix
+    ./desktop.nix
   ];
   programs.zsh.enable = true;
+  programs.adb.enable = true;
   nixpkgs.overlays = [
     inputs.nixneovimplugins.overlays.default
     inputs.emacs-overlay.overlays.default
@@ -28,5 +30,7 @@
     tree
     wget
     zip
+    libinput
+    libinput-gestures
   ];
 }
